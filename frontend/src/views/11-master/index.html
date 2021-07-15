@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= htmlWebpackPlugin.tags.title %></title>
+  <%= htmlWebpackPlugin.tags.icon %>
+
+  <style>
+    i{
+      font-size: 2.5rem;
+      width: calc(100%/2);
+    }
+  </style>
+</head>
+<body>
+  <!--------------------- HEADER SECTION --------------------->
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><%= htmlWebpackPlugin.tags.title %></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/master">Master</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/client">Client</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--------------------- PRODUCTS SECTION --------------------->
+  <section id="sec_body11" class="container">
+    <div class="row mx-0 p-2">
+      <div class="col-12">
+
+        <form id="frm_event" class="card" style="min-height: 100px;">
+          <div class="card-header text-center">
+            <span class="fs-3">ADD EVENT</span>
+          </div>
+          <div class="card-body">
+            <blockquote class="row justify-content-center">
+
+              <div class="col-auto my-1">
+                <label for="inputA" class="col-form-label">Title</label>
+              </div>
+              <div class="col-4 my-1">
+                <input type="text" id="inputA" class="form-control" required>
+              </div>
+  
+              <div class="col-auto my-1">
+                <label for="inputB" class="col-form-label">Day</label>
+              </div>
+              <div class="col-3 my-1">
+                <input type="date" id="inputB" class="form-control" required>
+              </div>
+  
+              <div class="col-auto my-1">
+                <label for="inputC" class="col-form-label">Hour</label>
+              </div>
+              <div class="col-3 my-1">
+                <input type="time" step="" id="inputC" class="form-control" required>
+              </div>
+
+              <div class="col-auto my-1">
+                <label for="inputD" class="col-form-label">Columns</label>
+              </div>
+              <div class="col-3 my-1">
+                <input type="number" id="inputD" class="form-control text-end" required>
+              </div>
+
+              <div class="col-auto my-1">
+                <label for="inputE" class="col-form-label">Rows</label>
+              </div>
+              <div class="col-3 my-1">
+                <input type="number" id="inputE" class="form-control text-end" required>
+              </div>
+
+              <div class="col-3 my-1">
+                <button type="submit" class="btn btn-success w-100">Create event</button>
+              </div>
+              
+            </blockquote>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--------------------- FOOTER SECTION --------------------->
+  
+  <!--------------------- MODAL SPACE SECTION --------------------->
+  <section id="modals"></section>
+  <!--------------------- TEMPLATE CARD PRODUCT SECTION --------------------->
+  
+  <!--------------------- TEMPLATE MODAL SECTION --------------------->
+  <template id="tmp_modal">
+    <div class="modal fade">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><%= htmlWebpackPlugin.tags.title %></h5>
+            <button type="button" class="btn btn-outline-light btn-close2 py-0 p-1" data-bs-dismiss="modal"><i class="bi bi-x fs-3"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="row mx-0">
+              <div class="col-12 mb-3">
+                <strong class="fs-3">RESUME</strong>
+              </div>
+              <div class="col-4">
+                <span> Title: <strong></strong> </span>
+              </div>
+              <div class="col-4">
+                <span> Day: <strong></strong> </span>
+              </div>
+              <div class="col-4">
+                <span> Hour: <strong></strong> </span>
+              </div>
+              <div class="col-12">
+                <blockquote class="mb-0 mt-2">
+                <!--
+                  <div class="d-flex">
+                    <i class="bi bi-archive"></i>
+                  </div>
+                -->
+                </blockquote>
+              </div>
+              <div class="col-12 mt-2 fs-4">
+                Do you wanna create the event with this configuration?
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer oneb d-none">
+            <button type="button" class="btn btn-outline-primary w-75" data-bs-dismiss="modal">OK</button>
+          </div>
+          <div class="modal-footer twob d-none">
+            <button type="button" class="btn btn-success">Confirm</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <!--------------------- SCRIPT SECTION --------------------->
+
+</body>
+</html>

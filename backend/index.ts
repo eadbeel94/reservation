@@ -22,4 +22,4 @@ app.use( '/' , ( req, res ) => res.send('hello') );
 
 
 //--------------------------- Initialize server ---------------------------
-app.listen( app.get('PORT') , ()=> console.log(`Server on port ${ app.get('PORT') }`) );
+app.listen( app.get('PORT') , ()=> console.log(`Server listen on ${ app.get('PORT') }`) );
