@@ -20,7 +20,7 @@ const prod= process.env.NODE_ENV !== 'development';
  * @memberof 00-helper 
  */
 //const IP= !prod ? "http://localhost:5000" : "" + "/api/shop";  //const IP= "http://localhost:5001/driveshop5/us-central1/shop";
-const IP= 'http://localhost:5001/driveshop5/us-central1/api/shop';
+const IP= 'http://localhost:3003/api';
 
 /** 
  * Call Modal and Tooltip class from boostrap 
@@ -104,7 +104,7 @@ const fetchSend= async( url="" , type="" , send )=>{
     config.headers= { 'X-Requested-With': 'XMLHttpRequest' };
     send && ( config.body= JSON.stringify(send) );
     send && ( config.headers= { ...config.headers, 'Content-Type': 'application/json' }  );
-
+    console.log('fetchSend ->',`${IP}${url}`)
     const res= await fetch( `${IP}${url}`, config );
     const json= await res.json();
 
@@ -181,7 +181,7 @@ const modalShow= ( spaceID="" , templateID="" , body="" , btns=1 , cb ) =>{
      * @callback $btn_confirm-onclick 
      * @memberof 00-helper/modalShow 
      */
-    $sec.querySelector('.btn-outline-light2').onclick= ()=>{
+    $sec.querySelector('.btn-success').onclick= ()=>{
       cb(); modal.hide();
     };
   }
@@ -634,7 +634,6 @@ const modalEventShow= ( spaceID="" , templateID="" , config={} , btns=1 , cb ) =
   $template.querySelector('.modal-body .row div:nth-child(2) strong').textContent= config.title;
   $template.querySelector('.modal-body .row div:nth-child(3) strong').textContent= config.day;
   $template.querySelector('.modal-body .row div:nth-child(4) strong').textContent= config.hour;
-
   $template.querySelector('.modal-body blockquote').innerHTML= "";
 
   const $table= d.createElement('div');
@@ -671,7 +670,7 @@ const modalEventShow= ( spaceID="" , templateID="" , config={} , btns=1 , cb ) =
      * @callback $btn_confirm-onclick 
      * @memberof 00-helper/modalShow 
      */
-    $sec.querySelector('.btn-outline-light').onclick= ()=>{
+    $sec.querySelector('.btn-success').onclick= ()=>{
       cb(); modal.hide();
     };
   }

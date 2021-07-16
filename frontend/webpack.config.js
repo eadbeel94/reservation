@@ -14,6 +14,7 @@ const inpFiles= [
   ['main','01-main','/index.html'],
   ['master','11-master','/master/index.html'],
   ['client','22-client','/client/index.html'],
+  ['event','23-event','/event/index.html'],
 ]
 outFiles[0]['common']= './src/js/common.js';
 

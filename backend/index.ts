@@ -5,7 +5,12 @@ import cors from 'cors';
 //--------------------------- Config options ---------------------------
 const app= express();
 
-app.set('PORT' , process.env.PORT || '3001' );
+if( process.env.NODE_ENV !== 'production' ) require('dotenv').config({ path: './.dev.env' });
+require('./model/connection.js');
+
+const { PORT }= require('./utils/config.js');
+
+app.set('PORT' , PORT );
 
 //--------------------------- Global middlewares ---------------------------
 app.use( cors() );
@@ -13,7 +18,7 @@ app.use( express.json() );
 app.use( express.urlencoded({ extended: true }) );
 
 //--------------------------- Routes ---------------------------
-app.use( '/' , ( req, res ) => res.send('hello') );
+require('./routes/apiRoutes')(app);
 
 //--------------------------- Static files ---------------------------
 //app.use( express.static( join(__dirname, '../build') ) );
