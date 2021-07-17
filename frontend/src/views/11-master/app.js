@@ -49,14 +49,14 @@ const watchCards= ( spaceID="" )=>{
           };
 
           modalEventShow("modals", "tmp_modal2", config, 2, async() =>{
-            const { stat }= await fetchSend(`/reservation/editOne/${target.dataset.id}`,"PUT",config);
+            const { stat }= await fetchSend(`/meeting/editOne/${target.dataset.id}`,"PUT",config);
             stat && setTimeout(() => location.reload(), 1000);
           });
         };
         if( target.matches('[data-type=del]') ){
           modalShow("modals", "tmp_modal", "Do you wanna delete this event?", 2, async() =>{
             $space.querySelector(`blockquote[data-id='${target.dataset.id}']`).innerHTML= "";
-            const { stat }= await fetchSend(`/reservation/delOne/${target.dataset.id}`,"DELETE");
+            const { stat }= await fetchSend(`/meeting/delOne/${target.dataset.id}`,"DELETE");
             stat && setTimeout(() => location.reload(), 1000);
           });
         };
@@ -81,7 +81,9 @@ const watchFormEvent= ( spaceID="" )=>{
     };
   
     modalEventShow("modals","tmp_modal2",config,2, async()=>{
-      const { stat }= await fetchSend("/reservation/addOne","POST",config);
+      const { stat, mess }= await fetchSend("/meeting/addOne","POST",config);
+      
+      modalShow('modals','tmp_modal', mess, 1);
       stat && setTimeout(() => location.reload(), 1000);
     });
   };
@@ -89,7 +91,7 @@ const watchFormEvent= ( spaceID="" )=>{
 };
 
 const main= async() =>{
-  const { data }= await fetchSend("/reservation/getAll");
+  const { data }= await fetchSend("/meeting/getAll");
 
   genCards('#sec_body11 .row','tmp_card',data);
   watchCards('#sec_body11 .row');

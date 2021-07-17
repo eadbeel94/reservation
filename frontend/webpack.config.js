@@ -14,7 +14,8 @@ const inpFiles= [
   ['main','01-main','/index.html'],
   ['master','11-master','/master/index.html'],
   ['client','22-client','/client/index.html'],
-  ['event','23-event','/event/index.html'],
+  ['create','23-create','/create/index.html'],
+  ['meeting','24-meeting','/meeting/index.html'],
 ]
 outFiles[0]['common']= './src/js/common.js';
 
@@ -28,11 +29,11 @@ inpFiles.forEach( r =>{
       htmlWebpackPlugin: {
         tags: {
           title: "Reservations",
-          //header: readFileSync( join( __dirname, './src/template/header.html' ) ),
+          header: readFileSync( join( __dirname, './src/template/header.html' ) ),
           //footer: readFileSync( join( __dirname, './src/template/footer.html' ) ),
-          //icon: `<link rel="icon" href="${ prod ? "/projects/eshop94" : "" }/img/favicon.ico">`,
+          icon: `<link rel="icon" href="/img/favicon.ico">`,
           //tcard: readFileSync( join( __dirname, './src/template/t_card.html' ) ),
-          //tmodal: readFileSync( join( __dirname, './src/template/t_modal.html' ) ),
+          tmodal: readFileSync( join( __dirname, './src/template/t_modal.html' ) ),
           //tspinner: readFileSync( join( __dirname, './src/template/t_spinner.html' ) ),
           //tscripts: readFileSync( join( __dirname, `./src/template/t_script${ prod ? "P" : "D" }.html` ) ),
           //modcookie: readFileSync( join( __dirname, './src/template/t_modCookie.html' ) )

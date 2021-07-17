@@ -1,7 +1,8 @@
 /** @namespace util/middleware/error */
 
-const boom= require('@hapi/boom');
-const { DEV } = require("../../utils/config.js");
+import { ErrorRequestHandler } from 'express';
+import boom from '@hapi/boom';
+import { DEV } from '../../utils/config';
 
 /**
  * Return if request is ajax or api
@@ -10,7 +11,7 @@ const { DEV } = require("../../utils/config.js");
  * @param {object} req server request object 
  * @returns {object} validate is ajax or api
  */
-function isreqAjaxorApi(req) {
+const isreqAjaxorApi: any= (req:any) => {
   return !req.accepts('html') || req.xhr;
 };
 /**
@@ -21,7 +22,7 @@ function isreqAjaxorApi(req) {
  * @param {object} stack object error.stack
  * @returns {object} object error with more information
  */
-function withErrorStack( err, stack ) {
+const withErrorStack: any= ( err: any, stack: any ) => {
   if( DEV ) return { ...err , stack }
 };
 /**
@@ -34,7 +35,7 @@ function withErrorStack( err, stack ) {
  * @param {function} next server function next 
  * @returns {function} call next() function 
  */
-function logError(err, req, res, next) {
+export const logError:ErrorRequestHandler= (err, req, res, next) => {
   let error= "";
   if( err.stack )         error= err.stack.split('\n')[0];
   else if ( err.message ) error= err.message;
@@ -53,7 +54,7 @@ function logError(err, req, res, next) {
  * @param {function} next server function next 
  * @returns {function} call next() function 
  */
-function wrapError( err, req, res, next ) {
+export const wrapError: ErrorRequestHandler= ( err, req, res, next ) => {
   if(!err.isBoom) next( boom.badImplementation(err) )
   next(err);
 };
@@ -67,7 +68,7 @@ function wrapError( err, req, res, next ) {
  * @param {function} next server function next 
  * @returns {function} call next() function 
  */
-function cliErrorHandler(err, req, res, next) {
+export const cliErrorHandler: ErrorRequestHandler= (err, req, res, next) => {
   const {
     output: { statusCode, payload }
   } = err; 
@@ -87,7 +88,7 @@ function cliErrorHandler(err, req, res, next) {
  * @param {object} res server object response
  * @param {function} next server function next 
  */
-function errorHandler(err, req, res, next) {
+export const errorHandler: ErrorRequestHandler= (err, req, res, next) => {
   if( !isreqAjaxorApi(req) ){
     const {
       output: { statusCode, payload }
@@ -96,11 +97,4 @@ function errorHandler(err, req, res, next) {
     res.status( statusCode );
     res.redirect("/404");
   };
-};
-
-module.exports= {
-  logError,
-  wrapError,
-  cliErrorHandler,
-  errorHandler
 };

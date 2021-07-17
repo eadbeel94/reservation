@@ -1,0 +1,12 @@
+#sec_body23 blockquote{
+  min-height: 85vh;
+}
+#sec_body23 .card{
+  width: 700px;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+#sec_body23 label{
+  color: var(--bs-secondary);
+  font-size: 1rem;
+}

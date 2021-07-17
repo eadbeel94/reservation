@@ -1,9 +1,16 @@
 /** @namespace util/middleware/auth */
 
-const passport= require('passport');
-const boom= require('@hapi/boom');
+import { RequestHandler, Request } from 'express';
+import passport from 'passport';
+import boom from '@hapi/boom';
 
-const { NOT_AUTH }= require('../../utils/config.js');
+interface userInterface { 
+  _id: string, 
+  id: string,
+  username: string, 
+  fullname: string,
+  password: string
+};
 
 /**
  * Middleware that use passport local strategy to check user credential
@@ -14,16 +21,15 @@ const { NOT_AUTH }= require('../../utils/config.js');
  * @param {function} next server next object
  * @returns {function} return next() method 
  */
-function authHandler(req,res,next){
-  return passport.authenticate('local', 
-    (err, user, info) => {
+export const authHandler: RequestHandler = ( req: Request|any, res, next ) =>{
+  return passport.authenticate('local', (err: any, user: userInterface, info:any) => {
       if (err)
         return next(err); 
 
       if (!user) 
         return next(info.message);
 
-      return req.logIn( user, err => {
+      return req.logIn( user, (err: any) => {
         if (err) 
           return next(err); 
         
@@ -44,8 +50,8 @@ function authHandler(req,res,next){
  * @param {function} next server next object
  * @returns {function} return next method 
  */
-function checkLogged(req, res, next) {
-  if(req.isAuthenticated() || NOT_AUTH ) return next();
+ export const checkLogged: RequestHandler= (req, res, next) => {
+  if( req.isAuthenticated() ) return next();
   
   const error = boom.badRequest('User Authentication Required');
   error.output.statusCode = 511;
@@ -53,5 +59,3 @@ function checkLogged(req, res, next) {
   error.output.payload.custom = 'User Authentication Required';
   return next(error);
 };
-
-module.exports= { authHandler , checkLogged };

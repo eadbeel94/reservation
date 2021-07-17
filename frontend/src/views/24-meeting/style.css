@@ -1,0 +1,34 @@
+#sec_body23 .swiper-container {
+  width: 100%;
+  min-height: 80vh;
+}
+
+.pageA .btns-event .btn{
+  height: 100px;
+}
+
+.pageB .sites{
+  min-height: 65vh;
+}
+.pageB .sites section{
+  display: flex;
+}
+.pageB .sites section button{
+  width: calc(100%/2);
+  text-align: center;
+  border-radius: 0 !important;
+  border: 0 !important;
+}
+.pageB .sites section span{
+  font-size: 2rem;
+  font-family: poppins1;
+  padding-right: 1rem;
+}
+
+.pageC .resume{
+  min-height: 40vh;
+}
+
+.pageD .finally{
+  text-align: center;
+}

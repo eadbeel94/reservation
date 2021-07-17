@@ -1,5 +1,7 @@
 /** @namespace util/middleware/valid */
 
+import { RequestHandler } from 'express';
+
 /**
  * Middleware that valid values received from client using joi mehtods
  * @function validHandler
@@ -8,11 +10,10 @@
  * @param {object} check type of element from request
  * @returns {function} return next() method
  */
-function validHandler( schema, check= "body" ) {
-  return function (req, res, next) {
-    const { error }= schema.validate(req[check])
+export const validHandler: any= ( schema: object | any, check: string= "body" ) => {
+  const validator: RequestHandler= (req:any, res, next) =>{
+    const { error }: { error: string | any }= schema.validate(req[check]);
     error ? next(new Error(error)) : next();
-  };
+  }
+  return validator;
 };
-
-module.exports= validHandler;

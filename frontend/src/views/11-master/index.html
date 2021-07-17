@@ -8,24 +8,7 @@
 </head>
 <body>
   <!--------------------- HEADER SECTION --------------------->
-  <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/"><%= htmlWebpackPlugin.tags.title %></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/master">Master</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/client">Client</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <%= htmlWebpackPlugin.tags.header %>
   <!--------------------- PRODUCTS SECTION --------------------->
   <section id="sec_body11" class="container">
     <div class="row mx-0 p-2">
@@ -132,28 +115,7 @@
     </div>
   </template>  
   <!--------------------- TEMPLATE MODAL SECTION --------------------->
-  <template id="tmp_modal">
-    <div class="modal fade">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title"><%= htmlWebpackPlugin.tags.title %></h5>
-            <button type="button" class="btn btn-outline-light btn-close2 py-0 p-1" data-bs-dismiss="modal"><i class="bi bi-x fs-3"></i></button>
-          </div>
-          <div class="modal-body">
-            mucho texto
-          </div>
-          <div class="modal-footer oneb d-none">
-            <button type="button" class="btn btn-outline-primary w-75" data-bs-dismiss="modal">OK</button>
-          </div>
-          <div class="modal-footer twob d-none">
-            <button type="button" class="btn btn-success">Confirm</button>
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </template>
+  <%= htmlWebpackPlugin.tags.tmodal %>
   <template id="tmp_modal2">
     <div class="modal fade">
       <div class="modal-dialog modal-dialog-centered modal-lg">

@@ -1,0 +1,10 @@
+#sec_body22 blockquote{
+  min-height: 85vh;
+}
+#sec_body22 .card{
+  width: 600px;
+}
+#sec_body22 label{
+  color: var(--bs-secondary);
+  font-size: 1.5rem;
+}

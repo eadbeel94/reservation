@@ -1,10 +1,10 @@
-const { Event }= require('../../model/main.js');
+const { Event }= require('../../model/main');
 
 /** 
  * CRUD operation to change values into user collection
  * @memberof service/user
  **/
-class ResStore{
+class EventStore{
   /** constructor not used */
   constructor(){};
 
@@ -12,7 +12,7 @@ class ResStore{
     return await Event.find();
   }
 
-  async getOneEvent(id){
+  async getOneEvent(id: string){
     return await Event.findById(id);
   }
 
@@ -20,19 +20,19 @@ class ResStore{
    * Save new user
    * @param {object} group object with all user's fields
    */
-  async createOneEvent( title , day , hour , col , row ){
+  async createOneEvent( title: string , day: string , hour: string , col: number , row: number ){
     const newEvent= new Event({ title , day , hour , col , row });
     await newEvent.save();
   };
 
-  async editOneEvent(id, title , day , hour , col , row){
+  async editOneEvent(id: string, title: string , day: string , hour: string , col: number , row: number){
     await Event.findByIdAndUpdate( id , { title , day , hour , col , row } );
   };
 
-  async deleteOneEvent(id){
+  async deleteOneEvent(id: string){
     await Event.findByIdAndDelete(id);
   };
 
 };
 
-module.exports= { ResStore };
+export { EventStore };

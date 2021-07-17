@@ -1,8 +1,8 @@
 /** @namespace model/schemas */
 
-const { Schema, model } = require('mongoose'); 
+import { Schema, model } from 'mongoose';
 
-const eventSchema = new Schema({                           //Creo una tabla de nombre UserSchema
+const meetingSchema = new Schema({                           //Creo una tabla de nombre UserSchema
   title:  { type: String },
   day:    { type: String },
   hour:   { type: String },
@@ -21,8 +21,9 @@ const userSchema = new Schema({
   fullname: { type: String },
   email:    { type: String },
   password: { type: String, required: true },
-  date:  { type: String }
-})
+  history:  { type: Array },
+  date:     { type: Number }
+});
 
-module.exports.Event = model('events', eventSchema);
-module.exports.User = model('users', userSchema);
+export const Event= model('events', meetingSchema);
+export const Client= model('users', userSchema);

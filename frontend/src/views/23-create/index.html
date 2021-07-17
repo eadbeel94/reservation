@@ -10,30 +10,46 @@
   <!--------------------- HEADER SECTION --------------------->
   <%= htmlWebpackPlugin.tags.header %>
   <!--------------------- PRODUCTS SECTION --------------------->
-  <section id="sec_body22" class="container">
-    <blockquote class="d-flex justify-content-center align-items-center">
-      <div class="card p-sm-4 px-sm-5 p-3 bg-dark">
+  <section id="sec_body23" class="container mt-1">
+    <blockquote class="d-flex justify-content-center align-items-center mb-0">
+      <div class="card bg-dark">
         
         <form class="form-signin text-primary">
-          <div class="card-title text-center mb-4 ">
+          <div class="card-title text-center my-2">
             <div class="text-light text-uppercase fs-2"><%= htmlWebpackPlugin.tags.title %></div>
-            <div class="text-secondary fs-3">SIGN IN <i class="fas fa-id-card-alt pl-2"></i></div>
+            <div class="text-secondary fs-3">CREATE USER <i class="fas fa-id-card-alt pl-2"></i></div>
           </div>
         
-          <div class="form-label-group">
-            <input id="inp_name" type="text" class="form-control" name="username" placeholder="username" required autofocus>
-            <label>username</label>
+          <div class="form-label-group mb-2">
+            <input type="text" class="form-control" name="fullname" placeholder="Full name" required autofocus>
+            <label>Full name</label>
+          </div>
+
+          <div class="form-label-group mb-2">
+            <input type="email" class="form-control" name="email" placeholder="E-mail" required>
+            <label>E-mail</label>
+          </div>
+
+          <div class="form-label-group mb-2">
+            <input type="text" class="form-control" name="username" placeholder="User name" required>
+            <label>Username</label>
           </div>
         
-          <div class="form-label-group">
-            <input id="inp_pass" type="password" class="form-control" name="password" placeholder="password">
+          <div class="form-label-group mb-2">
+            <input type="password" class="form-control" name="password" placeholder="password">
             <label>password</label>
           </div>
+
+          <div class="form-label-group mb-2">
+            <input type="password" class="form-control" name="password" placeholder="password">
+            <label>Confirm password</label>
+          </div>
+
           <button class="btn btn-outline-light btn-block mt-3 w-100" type="submit">
-            LOG IN
+            CREATE NEW USER
           </button>
-          <a class="btn btn-outline-info btn-block mt-2 w-100" href="/create">
-            CREATE ACCOUNT
+          <a class="btn btn-outline-info btn-block mt-2 w-100" href="/client">
+            RETURN
           </a>
   
           <div id="spc_alert" class="mt-2"></div>

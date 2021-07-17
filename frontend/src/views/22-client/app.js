@@ -1,23 +1,21 @@
+import './style.css';
 
-const { fetchSend }= require('../../js/helper.js');
-
+const { fetchSend, modalShow }= require('../../js/helper.js');
 const d= document;
 
-const genBtnEvents= async( spaceID= "" , list= [] ) =>{
-  const $sec_body= d.querySelector(spaceID);
-
-  list.forEach( group => {
-    const $button= d.createElement('button');
-    $button.classList.add('btn','btn-primary','btn-lg','fs-4');
-    $button.textContent= `${ group.title } ( ${ group.day } - ${ group.hour } )`;
-    $button.onclick= ()=> window.open(`/event?eid=${ group._id }`,'_self');
-    $sec_body.appendChild($button);
-  });
-};
-
 const main= async () =>{
-  const { data }= await fetchSend("/reservation/getAll");
-  genBtnEvents('#sec_body22 blockquote' , data);
+  const $form= d.querySelector('#sec_body22 form');
+  $form.onsubmit= async ev =>{
+    ev.preventDefault();
+
+    const send= {
+      username: ev.target[0].value,
+      password: ev.target[1].value,
+    };
+    const { mess, stat }= await fetchSend('/client/auth', 'POST', send);
+    modalShow("modals", "tmp_modal", mess , 1);
+    stat && setTimeout(() => window.open('/meeting','_self'), 1000);
+  };
 };
 
 main();

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= htmlWebpackPlugin.tags.title %></title>
+  <%= htmlWebpackPlugin.tags.icon %>
+</head>
+<body>
+  <!--------------------- HEADER SECTION --------------------->
+  <%= htmlWebpackPlugin.tags.header %>
+  <!--------------------- PRODUCTS SECTION --------------------->
+  <section id="sec_body24" class="container">
+    <!-- Slider main container -->
+    <div class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <blockquote class="swiper-slide pageA">
+
+          <div class="row mx-0 mt-3">
+            <div class="col-12 mb-4">
+              <div class="fs-2 text-center">CHOOSE YOUR FAVORITE EVENT</div>
+            </div>
+            <section class="d-grid gap-2 col-6 mx-auto btns-event">
+            </section>
+          </div>
+
+        </blockquote>
+        <blockquote class="swiper-slide pageB">
+
+          <div class="row mx-0 mt-2">
+            <div class="col-12 mb-2">
+              <div class="fs-2 text-center">CHOOSE YOUR SITE</div>
+            </div>
+            <section class="col-12 mx-auto sites">
+            </section>
+            <!--  
+              <div class="col-12 text-center mt-2">
+                <button class="btn btn-outline-success fs-4">Do you wanna reserve these places?</button>
+              </div>
+            -->
+            <div class="col-12 mt-3">
+              <div class="btn-group w-100" role="group">
+                <button type="button" class="btn btn-outline-secondary">Previous</button>
+                <button type="button" class="btn btn-outline-primary">Next</button>
+              </div>
+            </div>
+          </div>
+
+        </blockquote>
+        <blockquote class="swiper-slide pageC">
+          <div class="row mx-0">
+            <div class="col-12 text-center">
+              <p class="fs-1">RESUME</p>
+              <i class="bi bi-star-fill" style="font-size: 5rem;"></i>
+              <p class="fs-2">almost ended, your reservations are:</p>
+            </div>
+            <section class="col-7 resume mx-auto">
+              <ul class="list-group text-center">
+                
+              </ul>
+            </section>
+            <div class="col-8 mx-auto">
+              <div class="btn-group w-100" role="group">
+                <button type="button" class="btn btn-outline-secondary">Previous</button>
+                <button type="button" class="btn btn-success">Create reservations</button>
+              </div>
+            </div>
+          </div>
+        </blockquote>
+        <blockquote class="swiper-slide pageD">
+          <div class="row mx-0">
+            <div class="col-12 text-center">
+              <p class="fs-1 mb-1">Congratulations</p>
+              <i class="bi bi-emoji-smile" style="font-size: 7rem;"></i>
+              <p class="fs-3 mb-1">Your reservations was created successfully</p>
+              <p class="fs-2 mb-1">Save this QR code in somewhere safe</p>
+            </div>
+            <section class="col-12 finally">
+
+            </section>
+            <div class="col-8 mx-auto">
+              <div class="btn-group w-100" role="group">
+                <a class="btn btn-outline-secondary" href="/meeting">Return</a>
+              </div>
+            </div>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+  <!--------------------- FOOTER SECTION --------------------->
+  
+  <!--------------------- MODAL SPACE SECTION --------------------->
+  <section id="modals"></section>
+  <!--------------------- TEMPLATE MODAL SECTION --------------------->
+  <%= htmlWebpackPlugin.tags.tmodal %>
+
+</body>
+</html>
