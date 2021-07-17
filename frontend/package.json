@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open",
     "buildP": "cross-env NODE_ENV=production webpack -p",
-    "buildD": "cross-env NODE_ENV=development webpack -d"
+    "buildD": "cross-env NODE_ENV=development webpack -d",
+    "build": "webpack -p"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,6 @@
   "dependencies": {
     "bootstrap": "^5.0.2",
     "bootstrap-icons": "^1.5.0",
-    "cors": "^2.8.5",
     "dayjs": "^1.10.4",
     "qr-code-styling": "^1.6.0-rc.1",
     "swiper": "^6.7.5"
