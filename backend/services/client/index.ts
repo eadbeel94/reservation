@@ -1,4 +1,4 @@
-/** @namespace service/user */
+/** @namespace service/client */
 
 import { CliStore } from './store';
 import { RequestHandler } from 'express';
@@ -8,7 +8,7 @@ import m from 'dayjs';
 /**
  * Call methods to modify values into collection user
  * @const {class} CliStore
- * @memberof service/user
+ * @memberof service/client
  */
 const store= new CliStore();
 
@@ -19,6 +19,14 @@ interface userInterface {
   password: string
 };
 
+/**
+ * Get all user data and encrypt password, then save info into database
+ * @function createElement
+ * @memberof service/client
+ * @param req Express server request object
+ * @param res Express server response object
+ * @param next Express server next method
+ */
 export const createElement: RequestHandler= async (req,res,next) =>{
   try {
     const { fullname: full, email, username: user, password: pass }: userInterface= req.body;
@@ -33,6 +41,14 @@ export const createElement: RequestHandler= async (req,res,next) =>{
   } catch (error) {   next(error);    };
 };
 
+/**
+ * After user login send a message status
+ * @function authUser
+ * @memberof service/client
+ * @param req Express server request object
+ * @param res Express server response object
+ * @param next Express server next method
+ */
 export const authUser: RequestHandler= async(req, res, next) =>{
   try {
     const { amessage }: string|any = req.session;
@@ -41,6 +57,14 @@ export const authUser: RequestHandler= async(req, res, next) =>{
   } catch (error) {   next(error)   };
 };
 
+/**
+ * Execute method logout to end client session
+ * @function logoutUser
+ * @memberof service/client
+ * @param req Express server request object
+ * @param res Express server response object
+ * @param next Express server next method
+ */
 export const logoutUser: RequestHandler= async (req, res, next) => {
   try {
     req.logout();    

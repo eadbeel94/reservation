@@ -2,7 +2,12 @@
 
 import { Schema, model } from 'mongoose';
 
-const meetingSchema = new Schema({                           //Creo una tabla de nombre UserSchema
+/** 
+ * Mongodb schema with all meeting params 
+ * @const {schema} meetingSchema
+ * @memberof model/schemas
+ */
+const meetingSchema = new Schema({
   title:  { type: String },
   day:    { type: String },
   hour:   { type: String },

@@ -7,7 +7,7 @@ import boom from '@hapi/boom';
  * Return if request is ajax or api
  * @function isreqAjaxorApi
  * @memberof util/middleware/error
- * @param {object} req server request object 
+ * @param {object} req Express server request object
  * @returns {object} validate is ajax or api
  */
 const isreqAjaxorApi: boolean|any= ( req: Request ) => {
@@ -28,10 +28,10 @@ const withErrorStack: Error|object|any= ( err: Error, stack: object ) => {
  * Middleware that print in console status error
  * @function logError
  * @memberof util/middleware/error
- * @param {error} err server object error
- * @param {object} req server object request
- * @param {object} res server object response
- * @param {function} next server function next 
+ * @param {error} err object error
+ * @param {object} req Express server request object
+ * @param {object} res Express server response object
+ * @param {function} next Express server next method
  * @returns {function} call next() function 
  */
 export const logError:ErrorRequestHandler= (err, req, res, next) => {
@@ -47,10 +47,10 @@ export const logError:ErrorRequestHandler= (err, req, res, next) => {
  * Middleware that transform common error in a boom error
  * @function wrapError
  * @memberof util/middleware/error
- * @param {error} err server object error
- * @param {object} req server object request
- * @param {object} res server object response
- * @param {function} next server function next 
+ * @param {error} err object error
+ * @param {object} req Express server request object
+ * @param {object} res Express server response object
+ * @param {function} next Express server next method
  * @returns {function} call next() function 
  */
 export const wrapError: ErrorRequestHandler= ( err, req, res, next ) => {
@@ -61,10 +61,10 @@ export const wrapError: ErrorRequestHandler= ( err, req, res, next ) => {
  * Middleware that send Boom error is request from API request
  * @function cliErrorHandler
  * @memberof util/middleware/error
- * @param {error} err server object error
- * @param {object} req server object request
- * @param {object} res server object response
- * @param {function} next server function next 
+ * @param {error} err object error
+ * @param {object} req Express server request object
+ * @param {object} res Express server response object
+ * @param {function} next Express server next method
  * @returns {function} call next() function 
  */
 export const cliErrorHandler: ErrorRequestHandler= (err, req, res, next) => {
@@ -82,10 +82,10 @@ export const cliErrorHandler: ErrorRequestHandler= (err, req, res, next) => {
  * Middleware that redirect user to view 404
  * @function errorHandler
  * @memberof util/middleware/error
- * @param {error} err server object error
- * @param {object} req server object request
- * @param {object} res server object response
- * @param {function} next server function next 
+ * @param {error} err object error
+ * @param {object} req Express server request object
+ * @param {object} res Express server response object
+ * @param {function} next Express server next method
  */
 export const errorHandler: ErrorRequestHandler= (err, req, res, next) => {
   if( !isreqAjaxorApi(req) ){

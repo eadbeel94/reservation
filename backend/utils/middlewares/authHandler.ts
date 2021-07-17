@@ -16,9 +16,9 @@ interface userInterface {
  * Middleware that use passport local strategy to check user credential
  * @function authHandler
  * @memberof util/middleware/auth
- * @param {object} req server req object
- * @param {object} res server res object
- * @param {function} next server next object
+ * @param {object} req Express server request object
+ * @param {object} res Express server response object
+ * @param {function} next Express server next method
  * @returns {function} return next() method 
  */
 export const authHandler: RequestHandler = ( req: Request|any, res, next ) =>{
@@ -45,9 +45,9 @@ export const authHandler: RequestHandler = ( req: Request|any, res, next ) =>{
  * Middleware that evualuate auth status
  * @function
  * @memberof util/middleware/auth
- * @param {object} req server req object
- * @param {object} res server res object
- * @param {function} next server next object
+ * @param {object} req Express server request object
+ * @param {object} res Express server response object
+ * @param {function} next Express server next method
  * @returns {function} return next method 
  */
  export const checkLogged: RequestHandler= (req, res, next) => {

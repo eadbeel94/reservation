@@ -1,7 +1,6 @@
 /** @namespace util/schemas */
 
-const Joi= require('joi');
-
+import Joi from 'joi';
 
 /**
  * Using joi structure, create a validator for ID mongo db values
@@ -10,26 +9,37 @@ const Joi= require('joi');
  * @property {string} id Check if exist 24 hexadecimal positions 
  * @memberof util/schemas
  */
-
 export const meetingSchemaID= Joi.object({
   eid: Joi.string().regex(/^[0-9a-fA-F]{24}$/)
 });
 
 /**
- * Using joi structure, create a validator for each field into form recipe
+ * Using joi structure, create a validator for each field into form meeting
  * @type {Object}
  * @constant meetingSchema
- * @property {string} title evaluate that string contain 100 between 3 values 
+ * @property {string} title evaluate that value is a string and exist
+ * @property {string} day evaluate that string contain more 3 character
+ * @property {string} hour evaluate that string contain more 3 character
+ * @property {number} col evaluate that number was more 1
+ * @property {number} row evaluate that number was more 1
  * @memberof util/schemas
  */
 export const meetingSchema= Joi.object({
-  title: Joi.string().min(3).max(100).required(),
-  day:  Joi.string().min(3).max(25),
-  hour:  Joi.string().min(3).max(25),
-  col: Joi.number().integer().min(1).max(10),
-  row: Joi.number().integer().min(1).max(10),
+  title:  Joi.string().min(3).max(100).required(),
+  day:    Joi.string().min(3).max(25),
+  hour:   Joi.string().min(3).max(25),
+  col:    Joi.number().integer().min(1).max(10),
+  row:    Joi.number().integer().min(1).max(10),
 });
 
+/**
+ * Using joi structure, create a validator for each field into form reservation
+ * @type {Object}
+ * @constant reservationSchema
+ * @property {string} eid Check if exist 24 hexadecimal positions 
+ * @property {Array<number>} sites evaluate that array contain numbers
+ * @memberof util/schemas
+ */
 export const reservationSchema= Joi.object({
   eid:    Joi.string().regex(/^[0-9a-fA-F]{24}$/),
   sites:  Joi.array().items(Joi.number().integer().min(1)),

@@ -1,23 +1,39 @@
-/** @namespace service/user */
+/** @namespace service/meeting */
 
 import { RequestHandler } from 'express';
 import { EventStore } from './store';
 
 /**
- * Call methods to modify values into collection user
+ * Call methods to modify values into collection meeting
  * @const {class} EventStore
- * @memberof service/user
+ * @memberof service/meeting
  */
 const store= new EventStore();
 
-export const getAllElements: RequestHandler=  async (req, res, next) => {
+/**
+ * Get all meetings
+ * @function getAllElements
+ * @memberof service/meeting
+ * @param req Express server request object
+ * @param res Express server response object
+ * @param next Express server next method
+ */
+export const getAllElements: RequestHandler=  async (req, res, next) =>{
   try {
     const data= await store.getAllEvents(); 
     res.json({ data , mess: "Get All Meetings successfully" });
   } catch (error) {   next(error)   };
 };
 
-export const getOneElement: RequestHandler=   async (req, res, next)=>{
+/**
+ * Get just only one meeting
+ * @function getOneElement
+ * @memberof service/meeting
+ * @param req Express server request object
+ * @param res Express server response object
+ * @param next Express server next method
+ */
+export const getOneElement: RequestHandler=   async (req, res, next) =>{
   try {
     const { eid: id }= req.params;
 
@@ -26,7 +42,15 @@ export const getOneElement: RequestHandler=   async (req, res, next)=>{
   } catch (error) {   next(error);    };
 };
 
-export const createElement: RequestHandler=   async (req, res, next)=>{
+/**
+ * Create one meeting
+ * @function createElement
+ * @memberof service/meeting
+ * @param req Express server request object
+ * @param res Express server response object
+ * @param next Express server next method
+ */
+export const createElement: RequestHandler=   async (req, res, next) =>{
   try {
     const { title, day, hour, row, col }= req.body;
     await store.createOneEvent( title, day, hour, row, col );
@@ -35,7 +59,15 @@ export const createElement: RequestHandler=   async (req, res, next)=>{
   } catch (error) {   next(error);    };
 };
 
-export const editElement: RequestHandler=     async (req, res, next)=>{
+/**
+ * Edite one meeting
+ * @function editElement
+ * @memberof service/meeting
+ * @param req Express server request object
+ * @param res Express server response object
+ * @param next Express server next method
+ */
+export const editElement: RequestHandler=     async (req, res, next) =>{
   try {
     const { eid }= req.params;
     const { title, day, hour, row, col }= req.body;
@@ -45,7 +77,15 @@ export const editElement: RequestHandler=     async (req, res, next)=>{
   } catch (error) {   next(error);    };
 };
 
-export const delElement: RequestHandler=      async (req, res, next)=>{
+/**
+ * Delete one meeting
+ * @function delElement
+ * @memberof service/meeting
+ * @param req Express server request object
+ * @param res Express server response object
+ * @param next Express server next method
+ */
+export const delElement: RequestHandler=      async (req, res, next) =>{
   try {
     const { eid }= req.params;
 

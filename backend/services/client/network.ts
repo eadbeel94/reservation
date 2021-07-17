@@ -1,4 +1,4 @@
-/** @namespace route/user */
+/** @namespace route/client */
 
 import { Router } from "express";
 const router= Router();
@@ -12,32 +12,34 @@ import { userNewSchema } from '../../utils/schema/validSchema';
  * Save a new user into database, use middleware validation form
  *
  * @name addOne
- * @path {POST} /api/users/addOne
+ * @path {POST} /api/client/addOne
  * @body {object} user Include all user fields  
  * @response {object} data
  * @response {string} mess contain status message
- * @memberof route/user
+ * @memberof route/client
  */
- router.post( '/addOne' , valid(userNewSchema), createElement );
+router.post("/addOne", valid(userNewSchema), createElement);
+
 /**
  * Verify credential user, use middleware passport strategy custom
  *
  * @name auth
- * @path {POST} /api/users/auth
+ * @path {POST} /api/client/auth
  * @auth This route requires Authentication. If authentication fails it redirect main page with error message
  * @response {object} data
  * @response {string} mess contain status message
- * @memberof route/user
+ * @memberof route/client
  */
-router.post("/auth" , authHandler, authUser );
+router.post("/auth", authHandler, authUser);
+
 /**
  * Execute session end
  *
  * @name logout
- * @path {GET} /api/users/logout
+ * @path {GET} /api/client/logout
  * @response {object} data
  * @response {string} mess contain status message
- * @memberof route/user
+ * @memberof route/client
  */
 router.get("/logout" , logoutUser);
 
