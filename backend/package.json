@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "dev": "nodemon --ext ts,js --exec ts-node index.ts",
-    "dev1": "ts-node-dev ./index.ts",
-    "dev2": "ts-node ./index.ts"
+    "dev": "ts-node-dev ./index.ts",
+    "dev1": "nodemon --ext ts,js --exec ts-node index.ts",
+    "dev2": "ts-node ./index.ts",
+    "build": "tsc ./index.ts"
   },
   "keywords": [],
   "author": "",

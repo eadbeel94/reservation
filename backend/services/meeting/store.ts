@@ -10,11 +10,11 @@ class EventStore{
 
   async getAllEvents(){
     return await Event.find();
-  }
+  };
 
   async getOneEvent(id: string){
     return await Event.findById(id);
-  }
+  };
 
   /**
    * Save new user

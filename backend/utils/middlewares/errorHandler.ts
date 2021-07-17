@@ -1,6 +1,6 @@
 /** @namespace util/middleware/error */
 
-import { ErrorRequestHandler } from 'express';
+import { ErrorRequestHandler, Request } from 'express';
 import boom from '@hapi/boom';
 import { DEV } from '../../utils/config';
 
@@ -11,7 +11,7 @@ import { DEV } from '../../utils/config';
  * @param {object} req server request object 
  * @returns {object} validate is ajax or api
  */
-const isreqAjaxorApi: any= (req:any) => {
+const isreqAjaxorApi: boolean|any= ( req: Request ) => {
   return !req.accepts('html') || req.xhr;
 };
 /**
@@ -22,7 +22,7 @@ const isreqAjaxorApi: any= (req:any) => {
  * @param {object} stack object error.stack
  * @returns {object} object error with more information
  */
-const withErrorStack: any= ( err: any, stack: any ) => {
+const withErrorStack: Error|object|any= ( err: Error, stack: object ) => {
   if( DEV ) return { ...err , stack }
 };
 /**

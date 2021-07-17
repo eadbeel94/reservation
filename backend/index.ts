@@ -4,14 +4,14 @@ import passport from 'passport';
 import { join } from 'path';
 import cors from 'cors';
 
-import { PORT } from './utils/config';
+import { PORT, DEV } from './utils/config';
 import { routerLink as routesHandler } from './routes/apiRoutes';
 import { notFoundHandler } from './utils/middlewares/notFoundHandler';
 import { logError, wrapError, cliErrorHandler, errorHandler } from './utils/middlewares/errorHandler';
 //--------------------------- Config options ---------------------------
 const app= express();
 
-if( process.env.NODE_ENV !== 'production' ) require('dotenv').config();
+if( DEV ) require('dotenv').config();
 import './model/connection';
 import './utils/auth/passport';
 
@@ -20,14 +20,14 @@ app.set('PORT' , PORT );
 app.use( cors() );
 app.use( express.json() );
 app.use( express.urlencoded({ extended: true }) );
-app.use(session({                                     //Inicialize session
+app.use(session({                                     
   secret: 'secret',
   resave: true,
   saveUninitialized: true,
-  cookie: { secure: false, maxAge: 1000 * 60 * 11 }    //Keep session value for 2 minutes
+  cookie: { secure: false, maxAge: 1000 * 60 * 11 }   
 }));
-app.use(passport.initialize());                       //Inicialize passport
-app.use(passport.session());                          //Inicialize session
+app.use(passport.initialize());                       
+app.use(passport.session());                          
 
 //--------------------------- Routes ---------------------------
 routesHandler(app);

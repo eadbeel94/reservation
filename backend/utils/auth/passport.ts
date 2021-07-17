@@ -53,7 +53,7 @@ passport.serializeUser(( userdata: userInterface | any , done: CallableFunction 
  * @memberof util/auth
  */
 passport.deserializeUser(( data:userInterface, done:CallableFunction ) => {
-  Client.findById({ '_id': data.id }, (err:any, user: userInterface ) => {
+  Client.findById({ '_id': data.id }, ( err: Error|any, user: userInterface ) => {
     done(err, user);
   });
 });

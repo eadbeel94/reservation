@@ -1,14 +1,12 @@
 /** @namespace route/user */
 
-import { createElement, authUser, logoutUser } from './index';
 import { Router } from "express";
 const router= Router();
 
+import { createElement, authUser, logoutUser } from './index';
 import { validHandler as valid } from '../../utils/middlewares/validHandler';
 import { authHandler } from '../../utils/middlewares/authHandler';
 import { userNewSchema } from '../../utils/schema/validSchema';
-
-
 
 /**
  * Save a new user into database, use middleware validation form
@@ -43,5 +41,4 @@ router.post("/auth" , authHandler, authUser );
  */
 router.get("/logout" , logoutUser);
 
-//module.exports= router;
 export= router;

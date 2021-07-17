@@ -22,14 +22,14 @@ interface userInterface {
  * @returns {function} return next() method 
  */
 export const authHandler: RequestHandler = ( req: Request|any, res, next ) =>{
-  return passport.authenticate('local', (err: any, user: userInterface, info:any) => {
+  return passport.authenticate('local', (err: Error|any, user: userInterface, info: object|any) => {
       if (err)
         return next(err); 
 
       if (!user) 
         return next(info.message);
 
-      return req.logIn( user, (err: any) => {
+      return req.logIn( user, (err: Error|any) => {
         if (err) 
           return next(err); 
         

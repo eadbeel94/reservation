@@ -13,7 +13,7 @@ const store= new ResStore();
 export const generateElements: RequestHandler= async (req,res,next)=>{
   try {
     const { eid: eventID, sites }= req.body;
-    const { passport }:any= req.session;
+    const { passport }: object|any = req.session;
 
     if( !passport.hasOwnProperty('user') ) throw new Error('User not logged');
 

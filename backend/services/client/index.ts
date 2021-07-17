@@ -35,7 +35,7 @@ export const createElement: RequestHandler= async (req,res,next) =>{
 
 export const authUser: RequestHandler= async(req, res, next) =>{
   try {
-    const { amessage }:any= req.session;
+    const { amessage }: string|any = req.session;
     
     res.json({ data: true , mess: amessage });
   } catch (error) {   next(error)   };
