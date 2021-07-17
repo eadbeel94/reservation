@@ -14,7 +14,7 @@ const main= async () =>{
     };
     const { mess, stat }= await fetchSend('/client/auth', 'POST', send);
     modalShow("modals", "tmp_modal", mess , 1);
-    stat && setTimeout(() => window.open('/meeting','_self'), 1000);
+    stat && setTimeout(() => window.open('/views/meeting','_self'), 1000);
   };
 };
 

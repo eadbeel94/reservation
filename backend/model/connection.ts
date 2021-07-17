@@ -1,7 +1,6 @@
 /** @namespace model/connect */
 
 import { connect, ConnectOptions } from 'mongoose';
-import { DB_URL } from '../utils/config';
 
 /**
  * Stablish conection with database
@@ -23,4 +22,4 @@ const connection= ( uri: string= "" ): void => {
     .catch( err => console.log( err.message || String(err) ) );
 };
 
-connection( DB_URL );
+connection( process.env.MONGO_URI );

@@ -9,7 +9,7 @@ This app can do:
 
 ![](/frontend/src/assets/readme.png)
 
-<!--Web page example link: [Cookbook 94](https://cookbook94.herokuapp.com)--->
+<!--Web page example link: [Cookbook 94](https://reservation-9x.firebaseapp.com)--->
 
 # Pre-required
 - Node JS V14 or higher installed
@@ -18,11 +18,11 @@ This app can do:
 
 # Instructions
 open command line and code:
-clone repository using git clone https://github.com/eadbeel94/catalog94.git, next 
-cd frontend and execute command npm install
-the same steps to folder backend
-if you require run a simple test you must run npm build inside frontend folder
-subsecuently run npm dev inside backend folder and enjoy :D
+clone repository using git clone https://github.com/eadbeel94/reservation.git, next 
+cd backend and execute command npm install, take a moment until all instalation are completed
+if you require run a simple test in your local machine you must run npm start
+subsecuently you could open the project using localhost:3000 in any browser 
+and that all, I hope that you can enjoy and same way that me :D
 
 # Used Technologies
 - Frontend

@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open",
-    "buildP": "cross-env NODE_ENV=production webpack -p",
-    "buildD": "cross-env NODE_ENV=development webpack -d",
-    "build": "webpack -p"
+    "buildP": "npx cross-env NODE_ENV=production webpack -p",
+    "buildD": "npx cross-env NODE_ENV=development webpack -d",
+    "build": "npx cross-env NODE_ENV=production webpack -p"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "swiper": "^6.7.5"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "css-loader": "^5.0.0",
     "css-minimizer-webpack-plugin": "^1.1.5",
     "file-loader": "^6.1.1",

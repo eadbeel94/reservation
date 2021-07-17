@@ -2,7 +2,6 @@
 
 import { ErrorRequestHandler, Request } from 'express';
 import boom from '@hapi/boom';
-import { DEV } from '../../utils/config';
 
 /**
  * Return if request is ajax or api
@@ -23,7 +22,7 @@ const isreqAjaxorApi: boolean|any= ( req: Request ) => {
  * @returns {object} object error with more information
  */
 const withErrorStack: Error|object|any= ( err: Error, stack: object ) => {
-  if( DEV ) return { ...err , stack }
+  if( process.env.NODE_ENV !== "production" ) return { ...err , stack };
 };
 /**
  * Middleware that print in console status error
