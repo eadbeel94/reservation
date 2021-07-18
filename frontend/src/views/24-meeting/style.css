@@ -1,14 +1,46 @@
-#sec_body23 .swiper-container {
+#sec_body24 .swiper-container {
   width: 100%;
   min-height: 80vh;
 }
 
+.pageA .btns-event i{
+  width: 100%;
+  font-size: 10rem;
+}
+/*
 .pageA .btns-event .btn{
-  height: 100px;
+  min-height: 100px;
+}*/
+
+.pageA .btns-event .btn p{
+  margin-bottom: 0rem;
+  font-family: poppins1;
+}
+
+.pageA .btns-event .btn p:nth-child(1){
+  font-size: 2rem;
+}
+
+.pageA .btns-event .btn p:nth-child(2){
+  font-family: righte1;
+}
+
+.pageA .btn-warning{
+  min-height: 250px;
+  min-width: 250px;
+}
+
+.pageA .btn-warning i{
+  font-size: 6rem;
+}
+
+.pageA .btn-warning p{
+  font-size: 2rem;
+  font-family: poppins1 !important;
 }
 
 .pageB .sites{
-  min-height: 65vh;
+  min-height: 62vh;
 }
 .pageB .sites section{
   display: flex;
@@ -25,10 +57,28 @@
   padding-right: 1rem;
 }
 
+.pageB i.bi{
+  font-size: 2.5rem;
+  width: calc(100%/2);
+  text-align: center;
+}
+
+.pageB .btn-group .btn{
+  font-family: poppins1;
+}
+
 .pageC .resume{
-  min-height: 40vh;
+  min-height: 37vh;
+}
+
+.pageC .btn-group .btn{
+  font-family: poppins1;
 }
 
 .pageD .finally{
   text-align: center;
+}
+
+.pageD .btn-group .btn{
+  font-family: poppins1;
 }

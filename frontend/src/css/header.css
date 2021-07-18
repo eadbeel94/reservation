@@ -1,0 +1,14 @@
+#sec_header .navbar-brand{
+  font-family: righte1;
+  font-weight: 100;
+}
+
+#sec_header ul{
+  text-transform: uppercase;
+  font-family: poppins1;
+}
+
+#sec_header a{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}

@@ -1,3 +1,4 @@
+import './style.css';
 
 const {
   modalEventShow,
@@ -24,7 +25,9 @@ const genCards= ( spaceID="" , templateID="" , list=[] )=>{
     $template.querySelector('.card-body div:nth-child(4) input').value= el.col;
 
     $template.querySelector('.btn:nth-child(1)').dataset.id= el._id;
+    $template.querySelector('.btn:nth-child(1) i').dataset.id= el._id;
     $template.querySelector('.btn:nth-child(2)').dataset.id= el._id;
+    $template.querySelector('.btn:nth-child(2) i').dataset.id= el._id;
 
     $fragment.appendChild( d.importNode( $template , true ) );
   });

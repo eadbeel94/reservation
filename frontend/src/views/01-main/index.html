@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,22 +11,22 @@
   <%= htmlWebpackPlugin.tags.header %>
   <!--------------------- PRODUCTS SECTION --------------------->
   <section id="sec_body1" class="container">
-    <div class="d-flex align-items-center justify-content-around" style="height: 75vh;">
-      <button class="fs-1 btn btn-success w-25 h-25" onclick="window.open(`/views/master`,`_self`)">MASTER </button>
-      <button class="fs-1 btn btn-info w-25 h-25" onclick="window.open(`/views/client`,`_self`)">CLIENT</button>
+    <div class="d-flex align-items-center justify-content-around">
+      <button class="fs-1 btn btn-success" onclick="window.open(`/views/master`,`_self`)">
+        <i class="bi bi-person-badge"></i>
+        <p>MASTER</p>  
+      </button>
+      <button class="fs-1 btn btn-info" onclick="window.open(`/views/client`,`_self`)">
+        <i class="bi bi-people-fill"></i>
+        <p>CLIENTS</p>  
+      </button>
     </div>
   </section>
-
-
   <!--------------------- FOOTER SECTION --------------------->
-  
+  <%= htmlWebpackPlugin.tags.footer %>
   <!--------------------- MODAL SPACE SECTION --------------------->
   <section id="modals"></section>
-  <!--------------------- TEMPLATE CARD PRODUCT SECTION --------------------->
-  
   <!--------------------- TEMPLATE MODAL SECTION --------------------->
-  
-  <!--------------------- SCRIPT SECTION --------------------->
-
+  <%= htmlWebpackPlugin.tags.tmodal %>
 </body>
 </html>

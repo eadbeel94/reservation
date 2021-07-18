@@ -10,14 +10,14 @@
   <!--------------------- HEADER SECTION --------------------->
   <%= htmlWebpackPlugin.tags.header %>
   <!--------------------- PRODUCTS SECTION --------------------->
-  <section id="sec_body23" class="container mt-1">
+  <section id="sec_body23" class="container my-1">
     <blockquote class="d-flex justify-content-center align-items-center mb-0">
       <div class="card bg-dark">
         
         <form class="form-signin text-primary">
           <div class="card-title text-center my-2">
-            <div class="text-light text-uppercase fs-2"><%= htmlWebpackPlugin.tags.title %></div>
-            <div class="text-secondary fs-3">CREATE USER <i class="fas fa-id-card-alt pl-2"></i></div>
+            <div class="text-light text-uppercase fs-2"><%= htmlWebpackPlugin.tags.title %> <i class="bi bi-calendar-week ps-2"></i></div>
+            <div class="text-secondary fs-3">CREATE USER <i class="bi bi-plus-square ps-2"></i></div>
           </div>
         
           <div class="form-label-group mb-2">
@@ -46,23 +46,26 @@
           </div>
 
           <button class="btn btn-outline-light btn-block mt-3 w-100" type="submit">
-            CREATE NEW USER
+            CREATE NEW USER <i class="bi bi-node-plus-fill ps-1"></i>
           </button>
           <a class="btn btn-outline-info btn-block mt-2 w-100" href="/views/client">
-            RETURN
+            RETURN <i class="bi bi-arrow-90deg-left ps-1"></i>
           </a>
   
           <div id="spc_alert" class="mt-2"></div>
   
-          <p class="mt-3 text-muted text-center m-0" style="font-size: 14px;">Copyright © 2020. All right reserved. </p>
-          <p class="text-muted text-center m-0" style="font-size: 12px;"><a href="#">Designed by EADBEEL 2020</a> </p>
+          <p class="mt-3 text-muted text-center m-0">Copyright © 2021. All right reserved. </p>
+          <p class="text-muted text-center m-0">
+            <a href="https://eadbeel94.web.app" data-toggle="tooltip" 
+                data-placement="top" title="Ir al sitio web del desarrollador">
+              Designed by ECODE 2021
+            </a> 
+          </p>
         </form>
   
       </div>
     </blockquote>
   </section>
-  <!--------------------- FOOTER SECTION --------------------->
-  
   <!--------------------- MODAL SPACE SECTION --------------------->
   <section id="modals"></section>
   <!--------------------- TEMPLATE MODAL SECTION --------------------->
