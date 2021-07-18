@@ -2,10 +2,12 @@ import './style.css';
 import Swiper from 'swiper';
 import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 import QRCodeStyling from 'qr-code-styling';
+import m from 'dayjs';
+m.extend( require('dayjs/plugin/localizedFormat') );
 
 /*---------------------------------- Config ----------------------------------*/
 
-const { fetchSend , modalShow , qrBodyOps }= require('../../js/helper.js');
+const { fetchSend , modalShow , qrBodyOps, btnsCss }= require('../../js/helper.js');
 
 const d= document;
 let swiper;
@@ -148,18 +150,32 @@ const pageB= async( eventID= "" ) =>{
 const genBtnEvents= async( spaceID= "" , list= [] ) =>{
   const $sec_body= d.querySelector(spaceID);
 
-  list.forEach( group => {
-    const $button= d.createElement('button');
-    $button.classList.add('btn','btn-primary','btn-lg','fs-4');
-    $button.textContent= `${ group.title } ( ${ group.day } - ${ group.hour } )`;
-    $button.onclick= async ()=> { 
-      config.eid= group._id;
-      await pageB( group._id );
-      swiper.slideNext() 
+  let buttons= 0;
+  list.forEach( ({ _id, title, day, hour }, ind) => {
+    const active= m().isBefore(`${day}T${hour}`);
+    if( active ){
+      const $button= d.createElement('button');
+      const time= m(`${day}T${hour}`).format('lll');
+      $button.classList.add('btn',btnsCss[0][ind],'btn-lg','fs-4');
+      $button.innerHTML= `<p>${ title }</p> <p>${ time } </p>`;
+      $button.onclick= async ()=> { 
+        config.sites= [];
+        config.eid= _id;
+        await pageB( _id );
+        swiper.slideNext() 
+      };
+      buttons++;
+      $sec_body.appendChild($button);
     };
-
-    $sec_body.appendChild($button);
   });
+  if(buttons > 0){
+    $sec_body.querySelector('div').textContent= 'CHOOSE YOUR MEETING';
+  }else{
+    $sec_body.querySelector('div').textContent= 'NOT MEETING YET';
+    const $i= d.createElement('i');
+    $i.classList.add('bi','bi-emoji-frown');
+    $sec_body.appendChild($i)
+  }
 };
 
 const pageA= async() =>{

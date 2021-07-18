@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= htmlWebpackPlugin.tags.title %></title>
+  <%= htmlWebpackPlugin.tags.icon %>
+</head>
+<body>
+  <!--------------------- HEADER SECTION --------------------->
+  <%= htmlWebpackPlugin.tags.header %>
+  <!--------------------- PRODUCTS SECTION --------------------->
+  <section id="sec_body25" class="container">
+    <div class="row mx-0 my-2 justify-content-around">
+      <div class="col-12 text-center mb-2 ">
+        <span class="fs-3">CLIENT RESERVATION HISTORY</span>
+      </div>
+    </div>
+  </section>
+  <!--------------------- FOOTER SECTION --------------------->
+  <%= htmlWebpackPlugin.tags.footer %>
+  <!--------------------- MODAL SPACE SECTION --------------------->
+  <section id="modals"></section>
+  <!--------------------- TEMPLATE MODAL SECTION --------------------->
+  <%= htmlWebpackPlugin.tags.tmodal %>
+  <!--------------------- TEMPLATE CARD SECTION --------------------->
+  <template id="tmp_card">
+    <div class="col-5">
+      <div class="card bg-dark border-info text-white" style="min-height: 100px; border-width: 3px;">
+        <div class="card-header text-center">
+          <span class="fs-4">Meeting: <strong>Some event</strong></span>
+        </div>
+        <div class="card-body p-1">
+          <div class="row mx-0">
+            <div class="col-6">
+              <p class="mb-1">Day: <strong>1-1-1</strong></p>
+              <p class="mb-1">Hour: <strong>11:11</strong></p>
+              <div class="mb-1">
+                Places:
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="bg-secondary" style="min-height: 100px;">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+</body>
+</html>

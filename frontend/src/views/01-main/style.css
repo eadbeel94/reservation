@@ -1,0 +1,21 @@
+#sec_body1 > div{
+  height: calc(100vh - 115px);
+}
+
+#sec_body1 .btn{
+  width: 35%;
+  height: 50%;
+}
+
+#sec_body1 i{
+  font-size: 5rem;
+}
+
+#sec_body1 button{
+  border-radius: 0 0 2rem 0;
+}
+
+#sec_body1 button p{
+  font-family: poppins1;
+  font-size: 3rem;
+}

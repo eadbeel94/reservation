@@ -13,50 +13,51 @@
   <section id="sec_body11" class="container">
     <div class="row mx-0 p-2">
       <div class="col-12">
-        <form id="frm_event" class="card" style="min-height: 100px;">
+        <form id="frm_event" class="card">
           <div class="card-header text-center">
-            <span class="fs-3">ADD EVENT</span>
+            <span class="fs-3">ADD EVENT <i class="bi bi-calendar-week ps-2"></i></span>
           </div>
           <div class="card-body">
             <blockquote class="row justify-content-center">
 
               <div class="col-auto my-1">
-                <label for="inputA" class="col-form-label">Title</label>
+                <label for="inputA" class="col-form-label">Title:</label>
               </div>
-              <div class="col-4 my-1">
+              <div class="col-3 my-1">
                 <input type="text" id="inputA" class="form-control" required>
               </div>
   
               <div class="col-auto my-1">
-                <label for="inputB" class="col-form-label">Day</label>
+                <label for="inputB" class="col-form-label">Day:</label>
               </div>
               <div class="col-3 my-1">
                 <input type="date" id="inputB" class="form-control" required>
               </div>
   
               <div class="col-auto my-1">
-                <label for="inputC" class="col-form-label">Hour</label>
+                <label for="inputC" class="col-form-label">Hour:</label>
               </div>
               <div class="col-3 my-1">
                 <input type="time" step="" id="inputC" class="form-control" required>
               </div>
 
+
               <div class="col-auto my-1">
-                <label for="inputD" class="col-form-label">Columns</label>
+                <label for="inputD" class="col-form-label">Columns:</label>
               </div>
               <div class="col-3 my-1">
                 <input type="number" id="inputD" class="form-control text-end" required>
               </div>
 
               <div class="col-auto my-1">
-                <label for="inputE" class="col-form-label">Rows</label>
+                <label for="inputE" class="col-form-label">Rows:</label>
               </div>
               <div class="col-3 my-1">
                 <input type="number" id="inputE" class="form-control text-end" required>
               </div>
 
               <div class="col-3 my-1">
-                <button type="submit" class="btn btn-success w-100">Create event</button>
+                <button type="submit" class="btn btn-success w-100">CREATE MEETING <i class="bi bi-collection ps-2"></i></button>
               </div>
               
             </blockquote>
@@ -66,7 +67,7 @@
     </div>
   </section>
   <!--------------------- FOOTER SECTION --------------------->
-  
+  <%= htmlWebpackPlugin.tags.footer %>
   <!--------------------- MODAL SPACE SECTION --------------------->
   <section id="modals"></section>
   <!--------------------- TEMPLATE CARD SECTION --------------------->
@@ -107,8 +108,14 @@
         </div>
         <div class="card-footer">
           <div class="btn-group w-100" role="group">
-            <button type="button" class="btn btn-info m-1" data-type="edit">Edit</button>
-            <button type="button" class="btn btn-danger m-1" data-type="del">Delete</button>
+            <button type="button" class="btn btn-info m-1" data-type="edit">
+              EDIT 
+              <i class="bi bi-pencil ps-2" data-type="edit"></i>
+            </button>
+            <button type="button" class="btn btn-danger m-1" data-type="del">
+              DELETE 
+              <i class="bi bi-eraser ps-2" data-type="del"></i>
+            </button>
           </div>
         </div>
       </blockquote>
@@ -163,7 +170,5 @@
       </div>
     </div>
   </template>
-  <!--------------------- SCRIPT SECTION --------------------->
-
 </body>
 </html>

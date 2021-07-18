@@ -396,4 +396,43 @@ const qrBodyOps= ( w=100, h=100, data="" )=>{
 
 /* ------------------------------------------------------------------------------------------------------------------------ */
 
-module.exports= { modalShow, spinnerShow, getError, fetchSend , modalEventShow , qrBodyOps };
+const btnsCss= [
+  [
+    'btn-primary',
+    'btn-secondary',
+    'btn-success',
+    'btn-info',
+    'btn-warning',
+    'btn-danger',
+    'btn-light',
+    'btn-dark',
+    'btn-outline-primary',
+    'btn-outline-secondary',
+    'btn-outline-success',
+    'btn-outline-info',
+    'btn-outline-warning',
+    'btn-outline-danger',
+    'btn-outline-light',
+    'btn-outline-dark',
+  ],[
+    'btn-primary',
+    'btn-secondary',
+    'btn-success',
+    'btn-info',
+    'btn-warning',
+    'btn-danger',
+    'btn-light',
+    'btn-dark'
+  ],[
+    'btn-outline-primary',
+    'btn-outline-secondary',
+    'btn-outline-success',
+    'btn-outline-info',
+    'btn-outline-warning',
+    'btn-outline-danger',
+    'btn-outline-light',
+    'btn-outline-dark'
+  ]
+];
+
+module.exports= { modalShow, spinnerShow, getError, fetchSend , modalEventShow , qrBodyOps , btnsCss };

@@ -16,6 +16,7 @@ const inpFiles= [
   ['client','22-client','/views/client/index.html'],
   ['create','23-create','/views/create/index.html'],
   ['meeting','24-meeting','/views/meeting/index.html'],
+  ['history','25-history','/views/history/index.html'],
 ]
 outFiles[0]['common']= './src/js/common.js';
 
@@ -29,8 +30,9 @@ inpFiles.forEach( r =>{
       htmlWebpackPlugin: {
         tags: {
           title: "Reservations",
-          header: readFileSync( join( __dirname, './src/template/header.html' ) ),
           icon: `<link rel="icon" href="/img/favicon.ico">`,
+          header: readFileSync( join( __dirname, './src/template/header.html' ) ),
+          footer: readFileSync( join( __dirname, './src/template/footer.html' ) ),
           tmodal: readFileSync( join( __dirname, './src/template/t_modal.html' ) ),
         },
       }

@@ -5,8 +5,29 @@
   width: 700px;
   padding-left: 5rem;
   padding-right: 5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 1rem;
 }
 #sec_body23 label{
   color: var(--bs-secondary);
   font-size: 1rem;
+}
+
+#sec_body23 input{
+  font-size: 1.25rem;
+  /*font-family: righte1;*/
+}
+#sec_body23 .text-secondary, #sec_body23 .btn{
+  font-family: poppins1;
+}
+
+#sec_body23 .text-muted{
+  font-size: 0.85rem;
+  font-family: poppins1;
+}
+
+#sec_body23 a{
+  text-decoration: none;
+  font-family: righte1;
+  color: var(--bs-info)
 }
