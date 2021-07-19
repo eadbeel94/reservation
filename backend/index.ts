@@ -31,7 +31,7 @@ app.use(passport.session());      //Initialize session middleware
 //--------------------------- Routes ---------------------------
 routesHandler(app);               //Call api routes for each services folder
 //--------------------------- Static files ---------------------------
-app.use( express.static( join(__dirname, process.env.NODE_ENV !== 'production' ? './dist/public/' : './public' ) ) );   //Handle static files
+app.use( express.static( join(__dirname, process.env.NODE_ENV !== 'production' ? '../dist/src/public/' : './public' ) ) );   //Handle static files
 //--------------------------- Errors ---------------------------
 app.use( notFoundHandler );       //Handle each error
 app.use( logError );

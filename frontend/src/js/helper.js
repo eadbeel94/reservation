@@ -20,7 +20,7 @@ const prod= process.env.NODE_ENV !== 'development';
  * @memberof 00-helper 
  */
 //const IP= !prod ? "http://localhost:5000" : "" + "/api/shop";  //const IP= "http://localhost:5001/driveshop5/us-central1/shop";
-const IP= 'http://localhost:3000/api';
+const IP= (!prod ? "http://localhost:3000" : "") + "/api";
 
 /** 
  * Call Modal and Tooltip class from boostrap 

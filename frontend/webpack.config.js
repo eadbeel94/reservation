@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const orgPath= './src/views/';
-const desPath= '../backend/dist/public/';
+const desPath= '../dist/src/public/';
 const outFiles= [{},[]];
 const inpFiles= [
   ['main','01-main','/index.html'],
