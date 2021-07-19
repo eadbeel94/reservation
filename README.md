@@ -9,7 +9,7 @@ This app can do:
 
 ![](/frontend/src/assets/readme.png)
 
-Web page example link: [Cookbook 94](https://reservat-ion.herokuapp.com/)
+Web page example link: [Reservat-ion](https://reservat-ion.herokuapp.com/)
 
 # Pre-required
 - Node JS V14 or higher installed
