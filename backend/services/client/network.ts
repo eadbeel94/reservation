@@ -3,7 +3,7 @@
 import { Router } from "express";
 const router= Router();
 
-import { createElement, authUser, logoutUser } from './index';
+import { createElement, authUser, logoutUser, getOneElement } from './index';
 import { validHandler as valid } from '../../utils/middlewares/validHandler';
 import { authHandler } from '../../utils/middlewares/authHandler';
 import { userNewSchema } from '../../utils/schema/validSchema';
@@ -42,5 +42,16 @@ router.post("/auth", authHandler, authUser);
  * @memberof route/client
  */
 router.get("/logout" , logoutUser);
+
+/**
+ * Get client based on client identificator
+ *
+ * @name logout
+ * @path {GET} /api/client/getOne
+ * @response {object} data all client information
+ * @response {string} mess contain status message
+ * @memberof route/client
+ */
+router.get("/getOne" , getOneElement);
 
 export= router;

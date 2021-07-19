@@ -90,6 +90,6 @@ export const delElement: RequestHandler=      async (req, res, next) =>{
     const { eid }= req.params;
 
     await store.deleteOneEvent( eid );
-    res.json({ data: true , mess: "Meeting with id ${ id } deleted successfully" });
+    res.json({ data: true , mess: `Meeting with id ${ eid } deleted successfully` });
   } catch (error) {   next(error);    };
 };

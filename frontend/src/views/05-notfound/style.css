@@ -1,0 +1,13 @@
+#sec_body5 > div{
+  min-height: calc(100vh - 115px);
+}
+
+#sec_body5 i{
+  font-size: 10rem;
+}
+
+#sec_body5 p{
+  font-size: 3rem;
+  margin-bottom: 0rem;
+  font-family: righte1;
+}

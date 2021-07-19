@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= htmlWebpackPlugin.tags.title %></title>
+  <%= htmlWebpackPlugin.tags.icon %>
+</head>
+<body>
+  <!--------------------- HEADER SECTION --------------------->
+  <%= htmlWebpackPlugin.tags.header %>
+  <!--------------------- PRODUCTS SECTION --------------------->
+  <section id="sec_body12" class="container">
+    <div class="row mx-0 p-2">
+      <div class="col-12">
+        <form id="frm_event" class="card">
+          <div class="card-header text-center">
+            <span class="fs-3">ADD EVENT <i class="bi bi-calendar-week ps-2"></i></span>
+          </div>
+          <div class="card-body">
+            <blockquote class="row justify-content-center">
+
+              <div class="col-lg-auto col-3 my-1">
+                <label for="inputA" class="col-form-label">Title:</label>
+              </div>
+              <div class="col-lg-3 col-9 my-1">
+                <input type="text" id="inputA" class="form-control" required>
+              </div>
+  
+              <div class="col-lg-auto col-3 my-1">
+                <label for="inputB" class="col-form-label">Day:</label>
+              </div>
+              <div class="col-lg-3 col-9 my-1">
+                <input type="date" id="inputB" class="form-control" required>
+              </div>
+  
+              <div class="col-lg-auto col-3 my-1">
+                <label for="inputC" class="col-form-label">Hour:</label>
+              </div>
+              <div class="col-lg-3 col-9 my-1">
+                <input type="time" step="" id="inputC" class="form-control" required>
+              </div>
+
+
+              <div class="col-lg-auto col-3 my-1">
+                <label for="inputD" class="col-form-label">Columns:</label>
+              </div>
+              <div class="col-lg-3 col-9 my-1">
+                <input type="number" id="inputD" class="form-control text-end" required min="1" max="9">
+              </div>
+
+              <div class="col-lg-auto col-3 my-1">
+                <label for="inputE" class="col-form-label">Rows:</label>
+              </div>
+              <div class="col-lg-3 col-9 my-1">
+                <input type="number" id="inputE" class="form-control text-end" required min="1" max="9">
+              </div>
+
+              <div class="col-lg-3 my-1">
+                <button type="submit" class="btn btn-success w-100">CREATE MEETING <i class="bi bi-collection ps-2"></i></button>
+              </div>
+              
+            </blockquote>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!--------------------- FOOTER SECTION --------------------->
+  <%= htmlWebpackPlugin.tags.footer %>
+  <!--------------------- MODAL SPACE SECTION --------------------->
+  <section id="modals"></section>
+  <!--------------------- TEMPLATE CARD SECTION --------------------->
+  <template id="tmp_card">
+    <div class="col-lg-4 col-md-6 col-12">
+      <blockquote class="card my-2">
+        <div class="card-header py-0">
+          <div class="row mx-0">
+            <div class="col-auto">
+              <label class="col-form-label">Title:</label>
+            </div>
+            <div class="col-9">
+              <input type="text" class="form-control fs-5" required>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <section class="row mx-0">
+
+            <div class="col-9 mb-2">
+              <label class="form-label mb-0">Day:</label>
+              <input type="date" class="form-control">
+            </div>
+            <div class="col-3 mb-2">
+              <label class="form-label mb-0">Row:</label>
+              <input type="number" class="form-control" min="1" max="9">
+            </div>
+            <div class="col-9 mt-2">
+              <label class="form-label mb-0">Hour:</label>
+              <input type="time" class="form-control">
+            </div>
+            <div class="col-3 mt-2">
+              <label class="form-label mb-0">Col:</label>
+              <input type="number" class="form-control" min="1" max="9">
+            </div>
+
+          </section>
+        </div>
+        <div class="card-footer">
+          <div class="btn-group w-100" role="group">
+            <button type="button" class="btn btn-info m-1" data-type="edit">
+              EDIT 
+              <i class="bi bi-pencil ps-2" data-type="edit"></i>
+            </button>
+            <button type="button" class="btn btn-danger m-1" data-type="del">
+              DELETE 
+              <i class="bi bi-eraser ps-2" data-type="del"></i>
+            </button>
+          </div>
+        </div>
+      </blockquote>
+    </div>
+  </template>  
+  <!--------------------- TEMPLATE MODAL SECTION --------------------->
+  <%= htmlWebpackPlugin.tags.tmodal %>
+  <template id="tmp_modal2">
+    <div class="modal fade">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><%= htmlWebpackPlugin.tags.title %></h5>
+            <button type="button" class="btn btn-outline-light btn-close2 py-0 p-1" data-bs-dismiss="modal"><i class="bi bi-x fs-3"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="row mx-0">
+              <div class="col-12 mb-3">
+                <strong class="fs-3">RESUME</strong>
+              </div>
+              <div class="col-4">
+                <span> Title: <strong></strong> </span>
+              </div>
+              <div class="col-4">
+                <span> Day: <strong></strong> </span>
+              </div>
+              <div class="col-4">
+                <span> Hour: <strong></strong> </span>
+              </div>
+              <div class="col-12">
+                <blockquote class="mb-0 mt-2">
+                </blockquote>
+              </div>
+              <div class="col-12 mt-2 fs-4">
+                Do you wanna create the event with this configuration?
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer oneb d-none">
+            <button type="button" class="btn btn-outline-primary w-75" data-bs-dismiss="modal">OK</button>
+          </div>
+          <div class="modal-footer twob d-none">
+            <button type="button" class="btn btn-success">Confirm</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+</body>
+</html>

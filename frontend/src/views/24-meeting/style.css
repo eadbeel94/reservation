@@ -82,3 +82,33 @@
 .pageD .btn-group .btn{
   font-family: poppins1;
 }
+
+
+@media (max-width: 600px) {
+
+  #sec_body24{
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  #sec_body24 .pageB .sites{
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+  }
+
+  #sec_body24 .pageB .sites .btn{
+    padding: 0.1rem !important;
+  }
+
+  #sec_body24 .pageB .sites .btn span{
+    font-size: 1.5rem !important;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  #sec_body24 .pageB .sites .btn i{
+    font-size: 1.5rem !important;
+  }
+
+}

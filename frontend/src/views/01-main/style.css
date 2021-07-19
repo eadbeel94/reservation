@@ -1,5 +1,5 @@
 #sec_body1 > div{
-  height: calc(100vh - 115px);
+  min-height: calc(100vh - 120px);
 }
 
 #sec_body1 .btn{
@@ -18,4 +18,21 @@
 #sec_body1 button p{
   font-family: poppins1;
   font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+  
+  #sec_body1 > div{
+    display: grid !important;
+  }
+  
+  #sec_body1 .btn{
+    width: 100%;
+    height: 80%;
+    min-width: 200px;
+  }
+
+  #sec_body1 button p{
+    font-size: 2rem;
+  }
 }

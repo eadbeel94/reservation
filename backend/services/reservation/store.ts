@@ -18,7 +18,7 @@ class ResStore{
     const { list }= await Event.findById( eventID ).select('list');
     sites.forEach( site => list.push([ Number(site) , userID]) );
     await Event.findByIdAndUpdate( eventID , { list } );
-  }
+  };
 
   /**
    * Modify user history editing history array using user ID
@@ -28,9 +28,17 @@ class ResStore{
    */
   async saveClientHistory( userID: string, eventID: string, sites: number[] ){
     const { history }= await Client.findById( userID ).select('history');
-    sites.forEach( site => history.push([ Number(site) , eventID]) );
+    history.push([ sites , eventID]);  //sites.forEach( site => history.push([ Number(site) , eventID]) );
     await Client.findByIdAndUpdate( userID , { history } );
-  }
+  };
+
+  async getOneEvent( eventID: string ){
+    return await Event.findById( eventID ).select('list hour day title');
+  };
+
+  async getOneUser( userID: string ){
+    return await Client.findById( userID ).select('fullname');
+  };
 
 };
 

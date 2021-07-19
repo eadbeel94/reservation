@@ -12,7 +12,11 @@ const desPath= '../backend/dist/public/';
 const outFiles= [{},[]];
 const inpFiles= [
   ['main','01-main','/index.html'],
+  ['notfound','05-notfound','/404.html'],
+  ['notauth','06-notauth','/511.html'],
   ['master','11-master','/views/master/index.html'],
+  ['manage','12-manage','/views/manage/index.html'],
+  ['scan','13-scan','/views/scan/index.html'],
   ['client','22-client','/views/client/index.html'],
   ['create','23-create','/views/create/index.html'],
   ['meeting','24-meeting','/views/meeting/index.html'],

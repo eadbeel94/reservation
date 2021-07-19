@@ -22,14 +22,14 @@ const initSwiper= () =>{
 
 /*---------------------------------- page D ----------------------------------*/
 
-const generateQR= ( spaceID= "" )=>{
+const generateQR= ( spaceID= "" , data )=>{
   const $space= d.querySelector(spaceID);
-  const qrCode = new QRCodeStyling( qrBodyOps( 200, 200 , JSON.stringify( config )) );
+  const qrCode = new QRCodeStyling( qrBodyOps( 200, 200 , JSON.stringify( data )) );
   qrCode.append( $space );
 };
 
 const pageD= () =>{
-  generateQR('.pageD .finally')
+  generateQR('.pageD .finally', config)
   //const $btn_prev= d.querySelector('.pageD .btn-outline-secondary');
   //$btn_prev.onclick= () => swiper.slidePrev();
 };

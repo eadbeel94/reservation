@@ -312,7 +312,7 @@ const qrBodyOps= ( w=100, h=100, data="" )=>{
     "width": w,
     "height": h,
     "data": data,
-    "margin": 0,
+    "margin": 5,
     "qrOptions": {
       "typeNumber": "0",
       "mode": "Byte",

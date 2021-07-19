@@ -1,18 +1,39 @@
-#sec_body11{
-  min-height: calc( 100vh - 115px );
+#sec_body11 > div{
+  min-height: calc(100vh - 120px);
 }
 
-#sec_body11 span{
-  font-family: righte1;
-  font-weight: 100;
+#sec_body11 .btn{
+  width: 35%;
+  height: 50%;
 }
 
-#sec_body11{
+#sec_body11 i{
+  font-size: 5rem;
+}
+
+#sec_body11 button{
+  border-radius: 0 0 2rem 0;
+}
+
+#sec_body11 button p{
   font-family: poppins1;
+  font-size: 2.5rem;
 }
 
-#modals .modal-body > div > div:nth-child(5) i.bi{
-  font-size: 2.5rem;
-  width: calc(100%/2);
-  text-align: center;
+@media (max-width: 600px) {
+  
+  #sec_body11 > div{
+    display: grid !important;
+  }
+  
+  #sec_body11 .btn{
+    width: 100%;
+    height: 80%;
+    min-width: 200px;
+  }
+
+  #sec_body11 button p{
+    font-size: 2rem;
+  }
+
 }

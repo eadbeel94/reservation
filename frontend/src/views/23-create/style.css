@@ -31,3 +31,14 @@
   font-family: righte1;
   color: var(--bs-info)
 }
+
+@media (max-width: 600px) {
+  #sec_body23{
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+  }
+  #sec_body23 .card{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}

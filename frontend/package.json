@@ -16,6 +16,7 @@
     "bootstrap": "^5.0.2",
     "bootstrap-icons": "^1.5.0",
     "dayjs": "^1.10.4",
+    "jsqr": "^1.4.0",
     "qr-code-styling": "^1.6.0-rc.1",
     "swiper": "^6.7.5"
   },

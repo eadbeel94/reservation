@@ -1,0 +1,28 @@
+#sec_body13 > div{
+  min-height: calc(100vh - 115px);
+}
+
+#sec_body13 blockquote{
+  font-family: 'poppins1';
+}
+
+#sec_body13 blockquote .col-6{
+  min-height: 50px;
+}
+
+#sec_body13 blockquote p{
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+}
+
+#sec_body13 blockquote strong{
+  font-family: 'righte1';
+  min-height: 50px;
+  font-size: 1.4rem;
+}
+
+#qr-canvas {
+  margin: auto;
+  max-height: 300px; 
+  max-width: 300px;
+}

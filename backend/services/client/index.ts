@@ -71,3 +71,39 @@ export const logoutUser: RequestHandler= async (req, res, next) => {
     res.json({ data: true , mess: "Session closed successfully" });
   } catch (error) {   next(error)   };
 };
+
+/**
+ * Get meeting from ID client
+ * @function getOneElement
+ * @memberof service/meeting
+ * @param req Express server request object
+ * @param res Express server response object
+ * @param next Express server next method
+ */
+ export const getOneElement: RequestHandler= async (req, res, next) =>{
+  try {
+    const { passport }: object|any = req.session;
+
+    if( !passport || !passport.hasOwnProperty('user') ) throw new Error('User not logged');
+
+    const id= passport.user.id;
+    const { history: histA }= await store.getOneClient(id,['history']);
+    
+    let histB= histA.map( ([ place, eid ]: string[]) => eid);
+    histB= [...new Set(histB)];
+
+    const eventsA= await store.getSomeEvents(histB);
+    const eventsB: { [foo: string]: object }= {};
+
+    eventsA.forEach( (event:any) => {
+      eventsB[event._id]= {
+        title: event.title,
+        day: event.day,
+        hour: event.hour
+      }
+    });
+
+    const data= { history: histA, events: eventsB };
+    res.json({ data , mess: `Get Client with id ${ id } successfully` });
+  } catch (error) {   next(error);    };
+};

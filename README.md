@@ -17,11 +17,11 @@ This app can do:
 - Git V2.29 or higher installed
 
 # Instructions
-open command line and code:
-clone repository using git clone https://github.com/eadbeel94/reservation.git, next 
-cd backend and execute command npm install, take a moment until all instalation are completed
-if you require run a simple test in your local machine you must run npm start
-subsecuently you could open the project using localhost:3000 in any browser 
+Open command line and code:<br />
+clone repository using git clone https://github.com/eadbeel94/reservation.git, next<br />
+cd backend and execute command npm install, take a moment until all instalation are completed<br />
+if you require run a simple test in your local machine you must `run npm start`<br />
+subsecuently you could open the project using `http://localhost:3000` in any browser<br />
 and that all, I hope that you can enjoy and same way that me :D
 
 # Used Technologies
@@ -46,7 +46,7 @@ and that all, I hope that you can enjoy and same way that me :D
 - [Express-js](https://expressjs.com)
 - [Mongoose](https://mongoosejs.com)
 - [Passport-js](http://www.passportjs.org)
-- [Day-js (light weight alternative moment.js)](https://day.js.org/)
+- [Day-js](https://day.js.org/)
 - [B-crypt](https://www.npmjs.com/package/bcrypt)
 
 # About developer
@@ -54,4 +54,3 @@ and that all, I hope that you can enjoy and same way that me :D
 - [Adbeel Estrada Linkedin](https://www.linkedin.com/in/adbeel-estrada-9a332b181/)
 - [Adbeel Estrada Youtube](https://www.youtube.com/channel/UCKpR_x5WgtNCXx0oE2GuNag)
 - [Adbeel Estrada Facebook](https://www.facebook.com/Z1K3C)
-<!--- [Adbeel Estrada Github](https://github.com/eadbeel94?tab=repositories)-->

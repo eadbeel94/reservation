@@ -1,0 +1,40 @@
+#sec_body12{
+  min-height: calc( 100vh - 115px );
+}
+
+#sec_body12 span{
+  font-family: righte1;
+  font-weight: 100;
+}
+
+#sec_body12{
+  font-family: poppins1;
+}
+
+#modals .modal-body > div > div:nth-child(5) i.bi{
+  font-size: 2.5rem;
+  width: calc(100%/2);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  
+  #sec_body12{
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+
+  #sec_body12 .col-12{
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+
+  #modals .modal-body{
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  #modals .modal-body > div > div:nth-child(5) i.bi{
+    font-size: 1.75rem;
+  }
+}

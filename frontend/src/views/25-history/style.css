@@ -1,3 +1,35 @@
 #sec_body25{
   min-height: calc(100vh - 125px);
 }
+
+#sec_body25 .card-header{
+  font-family: righte1;
+}
+
+#sec_body25 .card-body{
+  font-family: poppins1;
+}
+
+#sec_body25 .card-body p{
+  font-size: 1.1rem;
+}
+
+#sec_body25 .not-servation{
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15rem;
+}
+
+@media (max-width: 600px) {
+  #sec_body25{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #sec_body25 .col-12{
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+  }
+}

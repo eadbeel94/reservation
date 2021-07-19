@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= htmlWebpackPlugin.tags.title %></title>
+  <%= htmlWebpackPlugin.tags.icon %>
+</head>
+<body>
+  <!--------------------- HEADER SECTION --------------------->
+  <%= htmlWebpackPlugin.tags.header %>
+  <!--------------------- PRODUCTS SECTION --------------------->
+  <section id="sec_body13" class="container">
+    <div class="row mx-0">
+      <div class="col-lg-4 col-12 my-1">
+        <div class="d-flex align-items-center justify-content-center h-100">
+          <button id="btn-scan-qr" class="btn btn-primary" style="height: 200px; width: 200px;"> 
+            <i class="bi bi-upc-scan" style="font-size: 5rem;"></i>
+            <p class="fs-3">Scan code</p>
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-4 col-12 my-1">
+        <div class="d-flex align-items-center justify-content-center h-100">
+          <section class="bg-dark" style=" overflow: hidden;">
+            <canvas id="qr-canvas"></canvas>
+          </section>
+        </div>
+      </div>
+      <div class="col-lg-4 col-12 my-1">
+        <div class="h-100 d-flex align-items-center">
+          <section class="card w-100">
+            <div class="card-header text-center"> <strong class="fs-4">RESULTADO</strong> </div>
+            <div class="card-body">
+              <blockquote class="row m-0">
+                <div class="col-6 text-center mt-2">
+                  <p> Meeting:</p>
+                  <strong></strong>
+                </div>
+                <div class="col-6 text-center mt-2">
+                  <p> User:</p>
+                  <strong></strong>
+                </div>
+                <div class="col-6 text-center mt-2">
+                  <p> Day:</p>
+                  <strong></strong>
+                </div>
+                <div class="col-6 text-center mt-2">
+                  <p> Hour:</p>
+                  <strong></strong>
+                </div>
+                <div class="col-12 text-center mt-2">
+                  <p> Places:</p>
+                  <strong></strong>
+                </div>
+              </blockquote>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--------------------- FOOTER SECTION --------------------->
+  <%= htmlWebpackPlugin.tags.footer %>
+  <!--------------------- MODAL SPACE SECTION --------------------->
+  <section id="modals"></section>
+  <!--------------------- TEMPLATE MODAL SECTION --------------------->
+  <%= htmlWebpackPlugin.tags.tmodal %>
+</body>
+</html>
