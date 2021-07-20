@@ -1,8 +1,8 @@
 /** @namespace util/middleware/auth */
 
-import { RequestHandler, Request } from 'express';
 import passport from 'passport';
 import boom from '@hapi/boom';
+import { RequestHandler, Request } from 'express';
 
 interface userInterface { 
   _id: string, 
@@ -43,12 +43,12 @@ export const authHandler: RequestHandler = ( req: Request|any, res, next ) =>{
 
 /**
  * Middleware that evualuate auth status
- * @function
+ * @function checkLogged
  * @memberof util/middleware/auth
  * @param {object} req Express server request object
  * @param {object} res Express server response object
  * @param {function} next Express server next method
- * @returns {function} return next method 
+ * @returns {function} return next() method 
  */
  export const checkLogged: RequestHandler= (req, res, next) => {
   if( req.isAuthenticated() ) return next();

@@ -1,7 +1,7 @@
 /** @namespace service/meeting */
 
-import { RequestHandler } from 'express';
 import { EventStore } from './store';
+import { RequestHandler } from 'express';
 
 /**
  * Call methods to modify values into collection meeting

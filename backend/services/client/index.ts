@@ -75,7 +75,7 @@ export const logoutUser: RequestHandler= async (req, res, next) => {
 /**
  * Get meeting from ID client
  * @function getOneElement
- * @memberof service/meeting
+ * @memberof service/client
  * @param req Express server request object
  * @param res Express server response object
  * @param next Express server next method

@@ -1,7 +1,7 @@
 /** @namespace util/middleware/error */
 
-import { ErrorRequestHandler, Request } from 'express';
 import boom from '@hapi/boom';
+import { ErrorRequestHandler, Request } from 'express';
 
 /**
  * Return if request is ajax or api
@@ -13,6 +13,7 @@ import boom from '@hapi/boom';
 const isreqAjaxorApi: boolean|any= ( req: Request ) => {
   return !req.accepts('html') || req.xhr;
 };
+
 /**
  * Create a new error object with normal error body and err.stack
  * @function withErrorStack
@@ -22,8 +23,10 @@ const isreqAjaxorApi: boolean|any= ( req: Request ) => {
  * @returns {object} object error with more information
  */
 const withErrorStack: Error|object|any= ( err: Error, stack: object ) => {
-  if( process.env.NODE_ENV !== "production" ) return { ...err , stack };
+  //if( process.env.NODE_ENV !== "production" ) return { ...err , stack };
+  return { ...err , stack };
 };
+
 /**
  * Middleware that print in console status error
  * @function logError
@@ -43,6 +46,7 @@ export const logError:ErrorRequestHandler= (err, req, res, next) => {
   console.error(`[handlerError] ${ error }`);
   next(err);
 };
+
 /**
  * Middleware that transform common error in a boom error
  * @function wrapError
@@ -57,6 +61,7 @@ export const wrapError: ErrorRequestHandler= ( err, req, res, next ) => {
   if(!err.isBoom) next( boom.badImplementation(err) )
   next(err);
 };
+
 /**
  * Middleware that send Boom error is request from API request
  * @function cliErrorHandler
@@ -78,6 +83,7 @@ export const cliErrorHandler: ErrorRequestHandler= (err, req, res, next) => {
     next(err);
   };
 };
+
 /**
  * Middleware that redirect user to view 404
  * @function errorHandler
@@ -94,6 +100,6 @@ export const errorHandler: ErrorRequestHandler= (err, req, res, next) => {
     } = err; 
   
     res.status( statusCode );
-    res.redirect("/404");
+    res.redirect("/404.html");
   };
 };

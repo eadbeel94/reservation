@@ -2,7 +2,6 @@ const { Event }= require('../../model/main');
 
 /** 
  * CRUD operation to change values into meeting collection
- * @memberof service/meeting
  **/
 class EventStore{
   /** constructor not used */

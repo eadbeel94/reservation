@@ -46,7 +46,7 @@ router.get("/logout" , logoutUser);
 /**
  * Get client based on client identificator
  *
- * @name logout
+ * @name getOne
  * @path {GET} /api/client/getOne
  * @response {object} data all client information
  * @response {string} mess contain status message

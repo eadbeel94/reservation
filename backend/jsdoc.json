@@ -1,0 +1,18 @@
+{
+  "plugins": ["better-docs/typescript","jsdoc-http-plugin"],
+  "source": {
+    "include": ["./"],
+    "includePattern": "\\.(jsx|js|ts|tsx)$",
+    "excludePattern": "(node_modules)"
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  },
+  "opts": {
+    "recurse": "true",
+    "destination": "../dist/src/public/views/doc",
+    "template": "node_modules/better-docs",
+    "readme": "./README.jsdoc.md"
+  }
+}

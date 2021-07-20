@@ -1,8 +1,8 @@
 /** @namespace route/api */
 
-import { Express } from 'express';
 import { readdirSync } from 'fs';
 import { join } from 'path';
+import { Express } from 'express';
  
 /**
  * Get all files with name network.ts from services folder

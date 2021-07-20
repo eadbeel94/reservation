@@ -29,8 +29,8 @@ router.get('/getAll', getAllElements );
  *
  * @name getOne
  * @path {GET} /api/meeting/getOne
- * @params {string} :id meeting Identificator
- * @response {object} data contain the meeting information
+ * @params {string} :eid meeting Identificator
+ * @response {object} data contain meeting information
  * @response {string} mess contain status message
  * @memberof route/meeting
  */
@@ -53,7 +53,7 @@ router.post('/addOne', valid( meetingSchema ), createElement );
  *
  * @name editOne
  * @path {PUT} /api/meeting/editOne
- * @params {string} :id meeting Identificator
+ * @params {string} :eid meeting Identificator
  * @body {object} meeting Include all meeting fields  
  * @response {object} data
  * @response {string} mess contain status message
@@ -66,7 +66,7 @@ router.put('/editOne/:eid', valid( meetingSchemaID , 'params' ), valid( meetingS
  *
  * @name delOne
  * @path {DELETE} /api/meeting/delOne
- * @params {string} :id meeting Identificator
+ * @params {string} :eid meeting Identificator
  * @response {object} data
  * @response {string} mess contain status message
  * @memberof route/meeting

@@ -1,7 +1,7 @@
 /** @namespace service/reserv */
 
-import { RequestHandler } from 'express';
 import { ResStore } from './store';
+import { RequestHandler } from 'express';
 
 /**
  * Call methods to modify values into collection client and meetings
@@ -39,6 +39,14 @@ export const generateElements: RequestHandler= async (req,res,next)=>{
   } catch (error) {   next(error);    };
 };
 
+/**
+ * Get a meeting information and place numbers
+ * @function generateElements
+ * @memberof service/reserv
+ * @param req Express server request object
+ * @param res Express server response object
+ * @param next Express server next method
+ */
 export const getElements: RequestHandler= async (req,res,next)=>{
   try {
     const { eid: eventID, sites: qrSites }= req.body;

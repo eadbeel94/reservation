@@ -1,5 +1,6 @@
 /** @namespace util/middleware/valid */
 
+import '@hapi/boom';
 import { RequestHandler, Request } from 'express';
 
 /**

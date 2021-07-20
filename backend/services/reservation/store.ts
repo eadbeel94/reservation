@@ -2,7 +2,6 @@ const { Event, Client }= require('../../model/main');
 
 /** 
  * CRUD operation to change values into client and meeting collection
- * @memberof service/reserv
  **/
 class ResStore{
   /** constructor not used */
@@ -12,7 +11,7 @@ class ResStore{
    * Create a reservation editing list array into one meeting using meeting ID
    * @param {string} eventID Meeting identificator
    * @param {Array<number>} sites Group chair required
-   * @param {string} userID USer that request reservation
+   * @param {string} userID User that request reservation
    */
   async createReservations( eventID: string , sites: number[] , userID: string ){
     const { list }= await Event.findById( eventID ).select('list');
@@ -32,10 +31,20 @@ class ResStore{
     await Client.findByIdAndUpdate( userID , { history } );
   };
 
+  /**
+   * Get a event using event ID
+   * @param {string} eventID Meeting identificator
+   * @returns {object} if exist get meeting
+   */
   async getOneEvent( eventID: string ){
     return await Event.findById( eventID ).select('list hour day title');
   };
 
+  /**
+   * GEt an user using user ID
+   * @param {string} userID User identificator
+   * @returns {object} if exist get user
+   */
   async getOneUser( userID: string ){
     return await Client.findById( userID ).select('fullname');
   };

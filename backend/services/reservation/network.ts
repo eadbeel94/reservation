@@ -12,23 +12,23 @@ import { reservationSchema } from '../../utils/schema/validSchema';
  *
  * @name addSome
  * @path {PUT} /api/recervation/addSome
- * @body {object} reservation Include all reservatuib fields  
+ * @body {object} reservation Include all reservation fields  
  * @response {object} data
  * @response {string} mess contain status message
  * @memberof route/reserv
  */
-router.put('/addSome', valid(reservationSchema) , generateElements);
+router.put('/addSome', valid(reservationSchema) , generateElements );
 
 /**
- * Save a reservation into database, use middleware to check validation form
+ * Get reservation information, Meeting data and user who request reservation
  *
- * @name addSome
- * @path {PUT} /api/recervation/addSome
- * @body {object} reservation Include all reservatuib fields  
+ * @name getOne
+ * @path {PUT} /api/recervation/getOne
+ * @body {object} reservation Include all reservation fields
  * @response {object} data
  * @response {string} mess contain status message
  * @memberof route/reserv
  */
-router.post('/getOne', /*valid(reservationSchema) ,*/ getElements );
+router.post('/getOne', valid(reservationSchema) , getElements );
 
 module.exports= router;

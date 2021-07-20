@@ -3,7 +3,6 @@ import { Client , Event } from '../../model/main';
 
 /** 
  * CRUD operation to change values into user collection
- * @memberof service/user
  **/
 class CliStore{
   /** constructor not used */
@@ -31,6 +30,11 @@ class CliStore{
     return await Client.findById(id).select(...params);
   };
 
+  /**
+   * Get Events using severa event identificators
+   * @param {Array<string>} ids Array event ids
+   * @returns {object} if exist get Events
+   */ 
   async getSomeEvents( ids: string[] ){
     const eids= ids.map( ( eid ) => Types.ObjectId(eid) );
     return await Event.find({ '_id': { $in: eids } }).select('-list -row -col');

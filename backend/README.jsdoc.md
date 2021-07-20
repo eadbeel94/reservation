@@ -7,11 +7,9 @@ This app can do:
 - Create reservation with spicific day, hour and chairs number
 - Reserve chair based on different client account
 
-![](/frontend/src/assets/readme.png)
+![](/img/readme.png)
 
-Web page example link: [Reservat-ion](https://reservat-ion.herokuapp.com/)
-
-Documentation link: [Reservat-ion/Documentation](https://reservat-ion.herokuapp.com/views/doc/)
+<!--Web page example link: [Reservat-ion](https://reservat-ion.herokuapp.com/)-->
 
 # Pre-required
 - Node JS V14 or higher installed
@@ -26,21 +24,29 @@ if you require run a simple test in your local machine you must `run npm start`<
 subsecuently you could open the project using `http://localhost:3000` in any browser<br />
 and that all, I hope that you can enjoy and same way that me :D
 
-# Used Technologies
-- Frontend
-  - HTML5
-  - CSS/Bootsrap 5
-  - Vanilla JS
-  - Webpack
+# Project documentation structure
+- Backend (Tier controller)
+  - [routes/api](/views/doc/route_api.html)
+  - [routes/client](/views/doc/route_client.html)
+  - [routes/meeting](/views/doc/route_meeting.html)
+  - [routes/reservation](/views/doc/route_reservation.html)
 
-- Backend
-  - NodeJS
-  - Express
-  - Typescript
-  - Mongo DB
-  - Passport
-  - JS/dayjs
-  - Bcrypt
+- Backend (Tier services)
+  - [client](/views/doc/service_client.html)
+  - [meeting](/views/doc/service_meeting.html)
+  - [reservation](/views/doc/service_reservation.html)
+
+- Backend (Tier model)
+  - [connect](/views/doc/model_connect.html)
+  - [schemas](/views/doc/model_schemas.html)
+
+- Backend (extras)
+  - [auth](/views/doc/util_auth.html)
+  - [middleware/auth](/views/doc/util_middleware_auth.html)
+  - [middleware/error](/views/doc/util_middleware_error.html)
+  - [middleware/notFound](/views/doc/util_middleware_notF.html)
+  - [middleware/valid](/views/doc/util_middleware_valid.html)
+  - [schemas](/views/doc/util_schemas.html)
 
 # Links and Resources used in this project
 - [Bootstrap5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
@@ -56,3 +62,4 @@ and that all, I hope that you can enjoy and same way that me :D
 - [Adbeel Estrada Linkedin](https://www.linkedin.com/in/adbeel-estrada-9a332b181/)
 - [Adbeel Estrada Youtube](https://www.youtube.com/channel/UCKpR_x5WgtNCXx0oE2GuNag)
 - [Adbeel Estrada Facebook](https://www.facebook.com/Z1K3C)
+- [Adbeel Estrada Github](https://github.com/eadbeel94?tab=repositories)
