@@ -8,6 +8,7 @@ import '../css/modal2.css';
 import '../css/main.scss';
 
 import '../assets/favicon.ico';
+import '../assets/readme.png';
 
 /*
 import '../img/favicon.ico';
