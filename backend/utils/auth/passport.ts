@@ -1,6 +1,6 @@
 /** @namespace util/auth */
 
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { Client } from '../../model/main';

@@ -2,7 +2,7 @@
 
 import { CliStore } from './store';
 import { RequestHandler } from 'express';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import m from 'dayjs';
 
 /**

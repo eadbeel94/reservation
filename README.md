@@ -9,9 +9,9 @@ This app can do:
 
 ![](/frontend/src/assets/readme.png)
 
-Web page example link: [Reservat-ion](https://reservat-ion.herokuapp.com/)
+Web page example link: [Reservat-ion](https://reservat-ion.mybluemix.net)
 
-Documentation link: [Reservat-ion/Documentation](https://reservat-ion.herokuapp.com/views/doc/)
+Documentation link: [Reservat-ion/Documentation](https://reservat-ion.mybluemix.net/views/doc/)
 
 # Pre-required
 - Node JS V14 or higher installed

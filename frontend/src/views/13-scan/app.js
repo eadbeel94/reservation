@@ -1,5 +1,7 @@
 import './style.css';
 import jsQR from "jsqr";
+import m from 'dayjs';
+m.extend( require('dayjs/plugin/localizedFormat') );
 
 const { fetchSend }= require('../../js/helper');
 
@@ -16,8 +18,8 @@ const fillCard= ( spaceID="", info={} )=>{
   const $strongs= $space.querySelectorAll('strong');
   $strongs[0].textContent= info.title;
   $strongs[1].textContent= info.fullname;
-  $strongs[2].textContent= info.day;
-  $strongs[3].textContent= info.hour;
+  $strongs[2].textContent= m( info.day ).format('LL');
+  $strongs[3].textContent= m(`${info.day}T${info.hour}`).format('LT');
   $strongs[4].textContent= info.places.toString();
 };
 
